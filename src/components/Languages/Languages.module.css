@@ -1,0 +1,52 @@
+.container {
+    position: relative;
+}
+
+.activeLang,
+.activeLang2 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    width: 100%;
+    transition: .8;
+}
+
+.activeLang2 {
+    padding: 10px;
+}
+
+.activeLang2:hover {
+    background: rgba(0,0,0,0.2) !important;
+    color: white !important;
+}
+
+.lang {
+    color: white;
+}
+
+.langImg {
+    width: 30px;
+    height: 30px;
+}
+
+.langs {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: auto;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    background: white;
+    -webkit-box-shadow: 10px 10px 29px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 29px -7px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 29px -7px rgba(0,0,0,0.75);
+}
+
+.langs::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
