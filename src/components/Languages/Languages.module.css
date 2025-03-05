@@ -50,3 +50,25 @@
 .langs::-webkit-scrollbar {
     display: none; /* Hide the scrollbar */
 }
+
+@media screen and (max-width: 768px) {
+    .lang {
+        font-size: .8rem;
+    }
+
+    .langImg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .lang {
+        font-size: .6rem;
+    }
+
+    .langImg {
+        width: 20px;
+        height: 20px;
+    }
+}

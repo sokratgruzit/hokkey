@@ -19,6 +19,7 @@
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.5",
+    "react-is-visible": "^1.2.0",
     "redux": "^5.0.1",
     "swiper": "^11.1.12"
   },

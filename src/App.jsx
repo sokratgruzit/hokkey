@@ -10,6 +10,7 @@ import { Layout } from "./components/Layouts/Layout";
 import { Team } from "./components/Team/Team";
 import { Media } from "./components/Media/Media";
 import { Program } from "./components/Program/Program";
+import { Home } from "./components/Home/Home";
 
 import './App.css'
 
@@ -38,6 +39,10 @@ function App() {
         path="/"
         element={<Layout />}
       >
+        <Route
+          path="/"
+          element={<Home />}
+        />
         <Route
           path="about"
           element={<About />}

@@ -1,0 +1,84 @@
+.buttonWrap {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+}
+
+.buttonWrap p {
+    color: #636363;
+    font-family: "Roboto";
+    font-size: 10px;
+}
+
+.button {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    border: 1px solid #000000;
+    padding: 10px;
+}
+
+.button p {
+    text-align: center;
+    font-family: "Roboto";
+    color: white;
+    font-size: 14px;
+    z-index: 10;
+    padding: 0 3px;
+    white-space: nowrap;     /* Prevent text from wrapping to a new line */
+    overflow: hidden;       
+    text-overflow: ellipsis;
+    text-shadow:
+   -1px -1px 0 #000000, /* Top-left */
+    1px -1px 0 #000000, /* Top-right */
+   -1px  1px 0 #000000, /* Bottom-left */
+    1px  1px 0 #000000, /* Bottom-right */
+    0px  -1px 0 #000000, /* Top */
+    0px   1px 0 #000000, /* Bottom */
+   -1px  0px 0 #000000,  /* Left */
+    1px  0px 0 #000000;  /* Right */
+}
+
+.glow {
+    width: calc(100% - 4px);
+    height: 50%;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 5px;
+}
+
+.whiteSpace {
+    border: 1px solid #FFFFFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+}
+
+.flag {
+    height: 40px;
+    position: absolute;
+    right: 30%;
+    width: 40px;
+}
+
+.btnLayout {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+}

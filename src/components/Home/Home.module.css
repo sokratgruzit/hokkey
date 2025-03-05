@@ -1,0 +1,189 @@
+.promoContainer {
+    width: 100%;
+    height: 100vh;
+    padding: 100px 20px 0px 20px;
+    background-image: url("/covers/promo.webp");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 5rem;
+    color: #fff;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    height: 250px;
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.icon {
+    width: 80px;
+}
+
+.bannerTitle {
+    font-size: 4rem;
+    color: #fff;
+    text-align: center;
+}
+/* End Banner */
+
+/* About */
+.aboutContainer {
+    width: 100%;
+    padding: 0 20px;
+    height: auto;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+}
+
+.section {
+    width: calc(50% - 10px);
+    height: auto;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0px;
+}
+
+.aboutContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/appIcons/red-knights.svg") center/cover no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.section > * {
+    position: relative;
+    z-index: 1;
+}
+
+.section h2 {
+    color: #d2002a;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.player {
+    position: relative;
+    overflow: hidden;
+    width: 70%;
+    min-height: 400px;
+    border-radius: 20px;
+    background-image: url("/covers/boy1.webp");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-box-shadow: inset 0px 0px 43px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 43px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 43px 0px rgba(0,0,0,0.75);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 2px solid #d2002a;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.list p {
+    font-size: 12px;
+}
+
+.sectionTitle {
+    border: 2px solid #d2002a;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.stats {
+    display: flex;
+    gap: 10px;
+}
+
+.statsItem {
+    padding: 10px;
+    border-radius: 8px;
+    background: #d2002a;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.statsItem p {
+    font-size: 4rem;
+    color: #FFF;
+}
+
+.statsItem span {
+    font-size: .7rem;
+    color: #FFF;
+}
+/* End About */
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 4rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .bannerTitle {
+        font-size: 2.5rem;
+    }
+
+    .icon {
+        width: 60px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 1rem;
+    }
+
+    .bannerTitle {
+        font-size: 1.8rem;
+    }
+
+    .icon {
+        width: 40px;
+    }
+}
