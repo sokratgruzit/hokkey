@@ -24,13 +24,53 @@
 
 .headerLink {
     text-decoration: none;
-    color: white
+    color: white;
 }
 
 .logo {
     width: 70px;
 }
 /* End Header */
+
+/* Footer */
+.footerWrap {
+    width: 100%;
+    background: #000;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.footerContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerSection {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footerSection h2 {
+    font-size: 1.25rem;
+}
+
+.footerLink {
+    text-decoration: none;
+    color: white;
+    font-size: .7rem;
+}
+
+.copyright {
+    color: white;
+    font-size: .7rem;
+    display: flex;
+    gap: 5px;
+}
+/* End Footer */
 
 @media screen and (max-width: 768px) {
     .headerLink {
@@ -39,6 +79,10 @@
 
     .logo {
         width: 50px;
+    }
+
+    .headerContainer {
+        height: 70px;
     }
 }
 

@@ -11,6 +11,7 @@ import { Team } from "./components/Team/Team";
 import { Media } from "./components/Media/Media";
 import { Program } from "./components/Program/Program";
 import { Home } from "./components/Home/Home";
+import { Policy } from "./components/Policy/Policy";
 
 import './App.css'
 
@@ -42,6 +43,10 @@ function App() {
         <Route
           path="/"
           element={<Home />}
+        />
+        <Route
+          path="policy"
+          element={<Policy />}
         />
         <Route
           path="about"

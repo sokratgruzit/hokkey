@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useIsVisible } from "react-is-visible";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
 
 import { GlowButton } from "../UI/GlowButton";
 
@@ -13,6 +14,7 @@ export const About = () => {
     const navigate = useNavigate();
     const ref = useRef();
     const isVisible = useIsVisible(ref);
+    const dispatch = useDispatch();
 
     return (
         <div ref={ref} className={styles.aboutContainer}>
@@ -91,6 +93,7 @@ export const About = () => {
                         ease: "easeInOut",
                         delay: .3
                     }}
+                    className={styles.btnWrap}
                 >
                     <GlowButton
                         bg="#000"
@@ -99,7 +102,13 @@ export const About = () => {
                         height="35px"
                         fontSize="14px"
                         shadowed={true}
-                        onClick={() => navigate("/about")}
+                        onClick={() => {
+                            navigate("/about");
+                            dispatch({
+                                type: "SET_ACITVE_TAB",
+                                payload: "about"
+                            });
+                        }}
                     />
                 </motion.span>}
             </div>
