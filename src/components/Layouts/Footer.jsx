@@ -61,11 +61,13 @@ export const Footer = () => {
                 </div>
                 <div className={styles.footerSection}>
                     <h2>{t("footer.address")}</h2>
-                    <p style={{ lineHeight: 1.6 }} className={styles.footerLink} dangerouslySetInnerHTML={{ __html: t("footer.addressDescr") }}></p>
+                    {window.innerWidth >= 768 && <p style={{ lineHeight: 1.6 }} className={styles.footerLink} dangerouslySetInnerHTML={{ __html: t("footer.addressDescr") }}></p>}
+                    {window.innerWidth < 768 && <p style={{ lineHeight: 1.6 }} className={styles.footerLink}>{t("footer.addressDescrMobile")}</p>}
                 </div>
                 <div className={styles.footerSection}>
                     <h2>{t("footer.contacts")}</h2>
-                    <p style={{ lineHeight: 1.6 }} className={styles.footerLink} dangerouslySetInnerHTML={{ __html: t("footer.contactsDescr") }}></p>
+                    {window.innerWidth >= 768 && <p style={{ lineHeight: 1.6 }} className={styles.footerLink} dangerouslySetInnerHTML={{ __html: t("footer.contactsDescr") }}></p>}
+                    {window.innerWidth < 768 && <p style={{ lineHeight: 1.6 }} className={styles.footerLink}>{t("footer.contactsDescrMobile")}</p>}
                 </div>
                 <div className={styles.copyright}>
                     <p>{t("footer.copyright")}</p>
