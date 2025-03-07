@@ -70,21 +70,14 @@ h2 {
     padding: 20px 0px;
 }
 
-.aboutContainer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+.knightBg {
+    position: fixed;
     width: 100%;
-    height: 100%;
-    background: url("/appIcons/red-knights.svg") center/cover no-repeat;
+    height: 90%;
+    top: 10%;
+    background: url("/appIcons/red-knights.svg") center/contain no-repeat;
     opacity: 0.1;
-    z-index: 0;
-}
-
-.section > * {
-    position: relative;
-    z-index: 1;
+    z-index: -1;
 }
 
 .section h2 {
@@ -258,6 +251,90 @@ h2 {
 .textBlock h2 {
     font-size: 20px;
     color: #d2002a;
+}
+
+.sloganContainer {
+    width: 100%;
+    padding: 100px 20px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #d2002a;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.sloganTitle {
+    color: #768aa1;
+    margin-bottom: 250px;
+    z-index: 10;
+}
+
+.sloganContainer p {
+    text-align: center;
+    font-size: .75rem;
+    color: #FFF;
+    width: 25%;
+    position: relative;
+    z-index: 10;
+}
+
+.knight {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: calc(50% - 150px);
+    top: 35%;
+    z-index: 5;
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid #000;
+}
+
+.p1 {
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    top: -3px;
+    right: 60px;
+    animation: counter-rotate 15s linear infinite;
+}
+
+.p2 {
+    position: absolute;
+    width: 64px;
+    height: 80px;
+    top: 40px;
+    right: 40px;
+    animation: counter-rotate 15s linear infinite;
+}
+
+.circleWrap {
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes counter-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
 }
 
 @media screen and (max-width: 1024px) {

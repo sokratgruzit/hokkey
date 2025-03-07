@@ -1,9 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { useIsVisible } from "react-is-visible";
 
 import styles from "./Layout.module.css";
 
@@ -11,8 +8,6 @@ export const Footer = () => {
     const year = new Date().getFullYear();
     const { t } = useTranslation("common");
     const dispatch = useDispatch();
-    const ref = useRef();
-    const isVisible = useIsVisible(ref);
 
     const handleActiveTab = (tab) => {
         dispatch({
@@ -22,8 +17,8 @@ export const Footer = () => {
     };
 
     return (
-        <div ref={ref} className={styles.footerWrap}>
-            {isVisible && <motion.div 
+        <div className={styles.footerWrap}>
+            <div 
                 className={styles.footerContainer}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -78,7 +73,7 @@ export const Footer = () => {
                         to="/policy" className={styles.footerLink}
                     >{t("footer.policy")}</Link>
                 </div>
-            </motion.div>}
+            </div>
         </div>
     )
 };

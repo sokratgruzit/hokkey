@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useIsVisible } from "react-is-visible";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import styles from "./Home.module.css";
@@ -9,6 +9,12 @@ export const News = () => {
     const { t } = useTranslation("common");
     const ref = useRef();
     const isVisible = useIsVisible(ref);
+
+    const [play, setPlay] = useState(false);
+
+    useEffect(() => {
+        if (isVisible) setPlay(true);
+    }, [isVisible]);
 
     const newsData = [
         {
@@ -33,7 +39,7 @@ export const News = () => {
 
     return (
         <div ref={ref} className={styles.newsContainer}>
-            {isVisible && <motion.div 
+            {play && <motion.div 
                 className={styles.titleWrap}
                 initial={{ translateY: -50, opacity: 0 }}
                 animate={{ translateY: 0, opacity: 1 }}
@@ -41,7 +47,7 @@ export const News = () => {
             >
                 <h1>{t("promo.news")}</h1>
             </motion.div>}
-            {isVisible && <div className={styles.newsWrap}>
+            {play && <div className={styles.newsWrap}>
                 {newsData.map((item, i) => {
                     return (
                         <motion.div 

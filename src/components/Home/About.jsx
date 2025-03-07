@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { useIsVisible } from "react-is-visible";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 
@@ -16,10 +16,16 @@ export const About = () => {
     const isVisible = useIsVisible(ref);
     const dispatch = useDispatch();
 
+    const [play, setPlay] = useState(false);
+
+    useEffect(() => {
+        if (isVisible) setPlay(true);
+    }, [isVisible]);
+
     return (
         <div ref={ref} className={styles.aboutContainer}>
             <div className={styles.section}>
-                {isVisible && <motion.h2
+                {play && <motion.h2
                     initial={{ translateY: -50, opacity: 0 }}
                     animate={{ translateY: 0, opacity: 1 }}
                     transition={{
@@ -27,7 +33,7 @@ export const About = () => {
                         ease: "easeInOut"
                     }}
                 >{t("promo.aboutUs")}</motion.h2>}
-                {isVisible && <motion.div 
+                {play && <motion.div 
                     className={styles.player}
                     initial={{ translateY: -50, opacity: 0 }}
                     animate={{ translateY: 0, opacity: 1 }}
@@ -39,7 +45,7 @@ export const About = () => {
                 ></motion.div>}
             </div>
             <div style={{ alignItems: "flex-start" }} className={styles.section}>
-                {isVisible && <motion.p 
+                {play && <motion.p 
                     className={styles.sectionTitle}
                     initial={{ translateY: -50, opacity: 0 }}
                     animate={{ translateY: 0, opacity: 1 }}
@@ -48,7 +54,7 @@ export const About = () => {
                         ease: "easeInOut"
                     }}
                 >{t("promo.aboutDescr")}</motion.p>}
-                {isVisible && <motion.div 
+                {play && <motion.div 
                     className={styles.list}
                     initial={{ translateY: -50, opacity: 0 }}
                     animate={{ translateY: 0, opacity: 1 }}
@@ -62,7 +68,7 @@ export const About = () => {
                     <p>{t("promo.listItem2")}</p>
                     <p>{t("promo.listItem3")}</p>
                 </motion.div>}
-                {isVisible && <motion.div 
+                {play && <motion.div 
                     className={styles.stats}
                     initial={{ translateY: -50, opacity: 0 }}
                     animate={{ translateY: 0, opacity: 1 }}
@@ -85,7 +91,7 @@ export const About = () => {
                         <span>{t("promo.stats3")}</span>
                     </div>
                 </motion.div>}
-                {isVisible && <motion.span
+                {play && <motion.span
                     initial={{ translateY: -50, opacity: 0 }}
                     animate={{ translateY: 0, opacity: 1 }}
                     transition={{
