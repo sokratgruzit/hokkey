@@ -6,6 +6,7 @@ import { Promo } from "./Promo";
 import { Slogan } from "./Slogan";
 import { Profits } from "./Profits";
 import { Trainings } from "./Trainings";
+import { Progress } from "./Progress";
 
 import styles from "./Home.module.css";
 
@@ -20,6 +21,7 @@ export const Home = () => {
             <Slogan />
             <Profits />
             <Trainings />
+            <Progress />
             <div className={styles.knightBg}></div>
         </>
     )

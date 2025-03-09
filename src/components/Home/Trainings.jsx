@@ -37,7 +37,7 @@ export const Trainings = () => {
             setImagePositions(Array(4).fill(null).map(() => ({
                 top: Math.random() * size.y - size.y / 4,
                 left: Math.random() * size.x - size.x / 4,
-                opacity: 0.5
+                opacity: 1
             })));
 
             setImgIndex(Math.floor(Math.random() * 4));
@@ -151,7 +151,7 @@ export const Trainings = () => {
                     animate={{
                         top: imagePositions[imgIndex]?.top,
                         left: imagePositions[imgIndex]?.left,
-                        opacity: [0, .5, 0] 
+                        opacity: [0, 1, 0] 
                     }}
                     transition={{
                         duration: 5,

@@ -521,6 +521,52 @@ h2 {
     border-radius: 50%;
 }
 
+.progressContainer {
+    width: 100%;
+    padding: 100px 20px 0 20px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #768aa1;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.titleWrap {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.titleWrap h1 {
+    width: 30%;
+    font-size: 3rem;
+}
+
+.descr {
+    width: 50%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.descr h2 {
+    font-size: 1rem;
+}
+
+.descr p {
+    font-size: .75rem;
+    color: #FFF;
+}
+
+.svgKnight {
+    position: absolute;
+}
+
 @keyframes counter-rotate {
     from {
         transform: rotate(0deg);
@@ -591,6 +637,20 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
+    .titleWrap {
+        flex-direction: column;
+    }
+
+    .descr {
+        width: 100%;
+    }
+
+    .titleWrap h1,
+    .descr h2,
+    .descr p {
+        width: 100%;
+    }
+
     .profitsContainer h1 {
         font-size: 3rem;
     }
@@ -718,6 +778,18 @@ h2 {
 }
 
 @media screen and (max-width: 440px) {
+    .titleWrap h1 {
+        font-size: 2rem;
+    }
+
+    .descr h2 {
+        font-size: .9rem;
+    }
+
+    .descr p {
+        font-size: .6rem;
+    }
+
     .profitsContainer h1 {
         font-size: 2rem;
     }

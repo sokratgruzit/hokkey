@@ -9,3 +9,35 @@ body {
   width: 100%;
   height: 100%;
 }
+
+.cls-1, .cls-2 {
+  fill: #fff;
+}
+
+.cls-3 {
+  fill: #c00;
+  stroke: #c00;
+}
+
+.cls-3, .cls-4, .cls-2, .cls-5, .cls-6 {
+  stroke-miterlimit: 10;
+}
+
+.cls-4 {
+  fill: #66839b;
+  stroke: #66839b;
+}
+
+.cls-2 {
+  stroke: #fff;
+}
+
+.cls-5 {
+  fill: #030303;
+  stroke: #030303;
+}
+
+.cls-6 {
+  fill: #7f0000;
+  stroke: #7f0000;
+}
