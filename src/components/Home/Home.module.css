@@ -600,6 +600,9 @@ h2 {
     cursor: pointer;
     border-radius: 8px;
     overflow: hidden;
+    -webkit-box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.75);
 }
 
 .teamItem img {

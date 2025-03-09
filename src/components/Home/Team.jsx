@@ -223,8 +223,16 @@ export const Team = () => {
                     return (
                         <div key={`team-${i}`} onClick={() => handleOpenModal(item)} className={styles.teamItem}>
                             <img src={item.src} alt="player" />
-                            <h2>{item.name}</h2>
-                            <p>{item.number}</p>
+                            <div style={{
+                                position: "absolute",
+                                width: "100%",
+                                bottom: 0,
+                                background: "#FFF",
+                                height: 75
+                            }}>
+                                <h2>{item.name}</h2>
+                                <p>{item.number}</p>
+                            </div>
                         </div>
                     )
                 })}
