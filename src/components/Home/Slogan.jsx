@@ -65,10 +65,10 @@ export const Slogan = () => {
             <div 
                 className={styles.circleWrap}
                 style={{ 
-                    width: containerSize * .8, 
-                    height: containerSize * .8,
+                    width: containerSize <= 768 ? containerSize : containerSize * .8, 
+                    height: containerSize <= 768 ? containerSize : containerSize * .8,
                     position: "absolute",
-                    left: `calc(50% - ${containerSize * .8 / 2}px)`,
+                    left: `calc(50% - ${containerSize <= 768 ? containerSize / 2 : containerSize * .8 / 2}px)`,
                     top: "50%",
                     zIndex: 0
                 }} 

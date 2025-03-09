@@ -91,7 +91,7 @@ h2 {
     overflow: hidden;
     width: 70%;
     min-height: 400px;
-    border-radius: 20px;
+    border-radius: 10px;
     background-image: url("/covers/boy1.webp");
     background-position: 50%;
     background-repeat: no-repeat;
@@ -210,7 +210,7 @@ h2 {
 
 .newsContainer {
     width: 100%;
-    padding: 0 20px 20px 20px;
+    padding: 0 20px 100px 20px;
     height: auto;
     display: flex;
     justify-content: space-between;
@@ -233,6 +233,11 @@ h2 {
     width: calc(100% / 3 - 15px);
     display: flex;
     flex-direction: column;
+    -webkit-box-shadow: 10px 10px 35px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 35px 4px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 35px 4px rgba(0,0,0,0.75);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .newsItem img {
@@ -255,7 +260,7 @@ h2 {
 
 .sloganContainer {
     width: 100%;
-    padding: 100px 20px;
+    padding: 0px 20px 100px 20px;
     height: auto;
     display: flex;
     justify-content: center;
@@ -509,6 +514,13 @@ h2 {
     opacity: .2;
 }
 
+.floatingImage {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    border-radius: 50%;
+}
+
 @keyframes counter-rotate {
     from {
         transform: rotate(0deg);
@@ -530,12 +542,85 @@ h2 {
 }
 
 @media screen and (max-width: 1024px) {
+    .item {
+        width: calc(50% - 10px);
+    }
+
+    .trainingsTitle2 {
+        font-size: 2rem;
+    }
+
+    .hiddenTitle {
+        top: -48px !important;
+        left: -40px !important;
+    }
+
     .statsItem p {
         font-size: 2rem;
+    }
+
+    .profitItem {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .profitItem img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .profitItem h2 {
+        font-size: 1.5rem !important;
+        width: 100%;
+        text-align: end;
+        margin-right: 40px;
+    }
+
+    .profitItem p {
+        width: calc(100% - 220px);
+        text-align: end;
+    }
+
+    .profitItem span {
+        width: auto;
+        position: absolute;
+        right: 0;
+        top: 13px;
     }
 }
 
 @media screen and (max-width: 768px) {
+    .profitsContainer h1 {
+        font-size: 3rem;
+    }
+
+    .profitItem img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profitItem p {
+        font-size: .5rem;
+        width: calc(100% - 110px);
+    }
+
+    .newsWrap {
+        flex-direction: column;
+    }
+
+    .newsItem {
+        width: 100%;
+    }
+
+    .promoContainer {
+        height: 568px;
+    }
+    
+    .swiper {
+        height: 250px;
+    }
+
     .aboutContainer {
         flex-direction: column;
         align-items: center;
@@ -582,9 +667,61 @@ h2 {
     .icon {
         width: 60px;
     }
+
+    .textBlock p,
+    .textBlock span {
+        font-size: .75rem;
+    }
+
+    .sloganContainer,
+    .newsContainer {
+        padding-bottom: 50px;
+    }
+
+    .sloganContainer h1 {
+        font-size: 2.5rem;
+    }
+
+    .sloganContainer p {
+        width: 40%;
+    }
+
+    .sloganTitle {
+        margin-bottom: 200px;
+    }
+
+    .knight {
+        top: 20%;
+        width: 250px;
+        height: 250px;
+        left: calc(50% - 125px);
+    }
+
+    .circleWrap {
+        top: 40% !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .items,
+    .trainingsContainer {
+        height: auto;
+    }
+
+    .trainingsContainer {
+        padding: 50px 20px;
+    }
+
+    .item {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 440px) {
+    .profitsContainer h1 {
+        font-size: 2rem;
+    }
+
     h1 {
         font-size: 3rem;
     }
@@ -599,5 +736,17 @@ h2 {
 
     .icon {
         width: 40px;
+    }
+
+    .sloganContainer h1 {
+        font-size: 2rem;
+    }
+
+    .sloganContainer p {
+        width: 80%;
+    }
+
+    .sloganTitle {
+        margin-bottom: 220px;
     }
 }
