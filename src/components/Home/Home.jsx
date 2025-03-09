@@ -7,6 +7,7 @@ import { Slogan } from "./Slogan";
 import { Profits } from "./Profits";
 import { Trainings } from "./Trainings";
 import { Progress } from "./Progress";
+import { Team } from "./Team";
 
 import styles from "./Home.module.css";
 
@@ -22,6 +23,7 @@ export const Home = () => {
             <Profits />
             <Trainings />
             <Progress />
+            <Team />
             <div className={styles.knightBg}></div>
         </>
     )

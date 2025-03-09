@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { useIsVisible } from "react-is-visible";
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
@@ -12,9 +11,7 @@ const SEGMENT_DEGREES = TOTAL_DEGREES / points.length;
 export const Progress = () => {
     const { t } = useTranslation("common");
     const ref = useRef();
-    const isVisible = useIsVisible(ref);
 
-    const [play, setPlay] = useState(false);
     const [containerSize, setContainerSize] = useState(0);
     const [progress, setProgress] = useState(0);
     const [current, setCurrent] = useState(0);
@@ -52,10 +49,6 @@ export const Progress = () => {
             }
         }, duration);  
     };
-
-    useEffect(() => {
-        if (isVisible) setPlay(true);
-    }, [isVisible]);
 
     useEffect(() => {
         let size = 1000;
