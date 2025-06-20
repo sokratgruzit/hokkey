@@ -17,7 +17,7 @@ export const Footer = () => {
     };
 
     return (
-        <div className={styles.footerWrap}>
+        <footer className={styles.footerWrap}>
             <div 
                 className={styles.footerContainer}
                 initial={{ scale: 0 }}
@@ -74,6 +74,6 @@ export const Footer = () => {
                     >{t("footer.policy")}</Link>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 };

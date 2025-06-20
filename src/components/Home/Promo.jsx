@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useIsVisible } from "react-is-visible";
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 import { GlowButton } from "../UI/GlowButton";
 
@@ -11,8 +12,13 @@ export const Promo = () => {
     const { t } = useTranslation("common");
     const ref = useRef();
     const isVisible = useIsVisible(ref);
+    const navigate = useNavigate();
 
     const [play, setPlay] = useState(false);
+
+    const handleSignUp = () => {
+        navigate("signup");
+    };
 
     useEffect(() => {
         if (isVisible) setPlay(true);
@@ -27,6 +33,7 @@ export const Promo = () => {
                     duration: .8,
                     ease: "easeInOut"
                 }}
+                style={{ textAlign: "center" }}
             >{t("promo.title")}</motion.h1>}
             {play && <motion.h2
                 initial={{ translateY: -50, opacity: 0 }}
@@ -36,6 +43,7 @@ export const Promo = () => {
                     ease: "easeInOut",
                     delay: .1
                 }}
+                style={{ width: "70%", textAlign: "center" }}
             >{t("promo.subTitle")}</motion.h2>}
             {play && <motion.span
                 initial={{ translateY: -50, opacity: 0 }}
@@ -53,7 +61,7 @@ export const Promo = () => {
                     height="35px"
                     fontSize="14px"
                     shadowed={true}
-                    onClick={() => console.log("join us")}
+                    onClick={handleSignUp}
                 />
             </motion.span>}
         </div>

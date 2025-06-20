@@ -24,7 +24,7 @@ export const Home = () => {
             <Trainings />
             <Progress />
             <Team />
-            <div className={styles.knightBg}></div>
+            <div className={styles.knightBg} />
         </>
     )
 };
