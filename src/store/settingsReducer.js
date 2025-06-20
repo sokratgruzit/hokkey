@@ -1,10 +1,10 @@
 const INIT_STATE = {
   language: {
-    id: 14,
-    name: "RU",
-    flag: "/flags/RU.webp",
-    lang: "ru",
-    langFull: "Русский"
+    id: 3,
+    name: "EN",
+    flag: "/flags/EN.webp",
+    lang: "en",
+    langFull: "English"
   },
   languageModal: false,
   activeTab: ""
