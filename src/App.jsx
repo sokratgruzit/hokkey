@@ -12,8 +12,9 @@ import { Media } from "./components/Media/Media";
 import { Program } from "./components/Program/Program";
 import { Home } from "./components/Home/Home";
 import { Policy } from "./components/Policy/Policy";
+import { SignUp } from "./components/SignUp/SignUp";
 
-import './App.css'
+import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
@@ -51,6 +52,10 @@ function App() {
         <Route
           path="about"
           element={<About />}
+        />
+        <Route
+          path="signup"
+          element={<SignUp />}
         />
         <Route
           path="team"
