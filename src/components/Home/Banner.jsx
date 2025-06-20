@@ -24,7 +24,7 @@ export const Banner = () => {
                 }}
             />}
             {isVisible && <motion.h1 
-                className={styles.bannerTitle}
+                className={`${styles.bannerTitle} h1`}
                 initial={{ translateY: -50, opacity: 0 }}
                 animate={{ translateY: 0, opacity: 1 }}
                 transition={{

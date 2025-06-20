@@ -198,7 +198,7 @@ export const Team = () => {
                     animate={{ translateY: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeInOut", delay: 0.1 }}
                 >
-                    <h1>{t("team.title")}</h1>
+                    <h1 className="h1">{t("team.title")}</h1>
                     <div style={{ position: "absolute", right: 0, bottom: "calc(50% - 17.5px)" }}>
                         <GlowButton
                             bg="#000"
