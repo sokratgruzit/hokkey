@@ -3,10 +3,10 @@ import { Banner } from "./Banner";
 import { Gallery } from "./Gallery";
 import { News } from "./News";
 import { Promo } from "./Promo";
-import { Slogan } from "./Slogan";
-import { Profits } from "./Profits";
+// import { Slogan } from "./Slogan";
+// import { Profits } from "./Profits";
 import { Trainings } from "./Trainings";
-import { Progress } from "./Progress";
+// import { Progress } from "./Progress";
 import { Team } from "./Team";
 
 import styles from "./Home.module.css";
@@ -19,10 +19,10 @@ export const Home = () => {
             <About />
             <Gallery />
             <News />
-            <Slogan />
-            <Profits />
+            {/* <Slogan /> */}
+            {/* <Profits /> */}
             <Trainings />
-            <Progress />
+            {/* <Progress /> */}
             <Team />
             <div className={styles.knightBg} />
         </>

@@ -41,3 +41,25 @@ body {
   fill: #7f0000;
   stroke: #7f0000;
 }
+
+.h1 {
+  font-size: 4rem !important;
+}
+
+@media (max-width: 1024px) {
+  .h1 {
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .h1 {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 440px) {
+  .h1 {
+    font-size: 2rem !important;
+  }
+}

@@ -45,7 +45,7 @@ export const News = () => {
                 animate={{ translateY: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeInOut", delay: 0.1 }}
             >
-                <h1>{t("promo.news")}</h1>
+                <h1 className="h1" style={{ color: "white" }}>{t("promo.news")}</h1>
             </motion.div>}
             {play && <div className={styles.newsWrap}>
                 {newsData.map((item, i) => {
