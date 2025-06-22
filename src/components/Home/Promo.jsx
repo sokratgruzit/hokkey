@@ -35,7 +35,7 @@ export const Promo = () => {
                     ease: "easeInOut"
                 }}
                 style={{ textAlign: "center" }}
-                className="h1"
+                className="h1 text-shadow"
             >{t("promo.title")}</motion.h1>}
             {play && <motion.h2
                 initial={{ translateY: -50, opacity: 0 }}
@@ -46,6 +46,7 @@ export const Promo = () => {
                     delay: .1
                 }}
                 style={{ width: "70%", textAlign: "center" }}
+                className="text-shadow"
             >{t("promo.subTitle")}</motion.h2>}
             {play && <motion.span
                 initial={{ translateY: -50, opacity: 0 }}

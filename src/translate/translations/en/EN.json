@@ -1,7 +1,7 @@
 {
   "header": {
     "about": "About",
-    "team": "Team",
+    "team": "Coaching staff",
     "media": "Media",
     "program": "Program"
   },
@@ -46,8 +46,7 @@
     "allPhoto": "All photos",
     "aboutDescr": "The Red Knights Children's Hockey School is a place where young athletes learn skills, discipline, and team play. We raise not just hockey players, but strong, goal-oriented individuals who are ready to win on the ice and in life.",
     "listItem1": "We believe that every child is a potential champion! Our mission is to create all the conditions for the development of the talent of each young hockey player, to raise not only strong athletes, but also worthy individuals who know how to set goals and achieve them.",
-    "listItem2": "Цель - создать комфортные условия для тренировок и занятий, обеспечить непрерывный качественный процесс всестороннего развития хоккеиста. Отличный хоккеист - думающий хоккеист, поэтому мы делаем акцент на повышение уровня производительности как во время тренировок, так и во время учебных занятий.",
-    "listItem3": "Задача - вызвать интерес ребёнка, и шаг за шагом выстраивать тренировочный процесс таким образом,чтобы ребёнок развивался и как командный игрок, и как самостоятельная личность. Мы достигаем высоких результатов, двигаясь к общей цели вместе с командой." 
+    "listItem2": "Children's hockey school 'Red Knights' - we forge champions from an early age!"
   },
   "slogan": {
     "top": "Моя задача привить ребёнку интерес к хоккею, не погасив при этом огонь в детских глазах.",
@@ -102,8 +101,8 @@
     "p13": "Red Knights"
   },
   "team": {
-    "title": "Team",
-    "btnText": "All players",
+    "title": "Coaching staff",
+    "btnText": "All trainers",
     "birth": "Date of birth:",
     "height": "Height",
     "weight": "Weight",

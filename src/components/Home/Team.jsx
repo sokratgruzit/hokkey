@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 
 import { GlowButton } from "../UI/GlowButton";
+import Coach from "../3D/Coach";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -48,66 +49,66 @@ const teamData = [
             hand: "Правый"
         }
     },
-    {
-        src: "/covers/boy1.webp",
-        name: "Никитин Александр",
-        number: 3,
-        data: {
-            birth: "30.10.2018",
-            position: "Защитник",
-            height: 170,
-            weight: 50,
-            hand: "Правый"
-        }
-    },
-    {
-        src: "/covers/boy1.webp",
-        name: "Никитин Александр",
-        number: 3,
-        data: {
-            birth: "30.10.2018",
-            position: "Защитник",
-            height: 170,
-            weight: 50,
-            hand: "Правый"
-        }
-    },
-    {
-        src: "/covers/boy1.webp",
-        name: "Никитин Александр",
-        number: 3,
-        data: {
-            birth: "30.10.2018",
-            position: "Защитник",
-            height: 170,
-            weight: 50,
-            hand: "Правый"
-        }
-    },
-    {
-        src: "/covers/boy1.webp",
-        name: "Никитин Александр",
-        number: 3,
-        data: {
-            birth: "30.10.2018",
-            position: "Защитник",
-            height: 170,
-            weight: 50,
-            hand: "Правый"
-        }
-    },
-    {
-        src: "/covers/boy1.webp",
-        name: "Никитин Александр",
-        number: 3,
-        data: {
-            birth: "30.10.2018",
-            position: "Защитник",
-            height: 170,
-            weight: 50,
-            hand: "Правый"
-        }
-    }
+    // {
+    //     src: "/covers/boy1.webp",
+    //     name: "Никитин Александр",
+    //     number: 3,
+    //     data: {
+    //         birth: "30.10.2018",
+    //         position: "Защитник",
+    //         height: 170,
+    //         weight: 50,
+    //         hand: "Правый"
+    //     }
+    // },
+    // {
+    //     src: "/covers/boy1.webp",
+    //     name: "Никитин Александр",
+    //     number: 3,
+    //     data: {
+    //         birth: "30.10.2018",
+    //         position: "Защитник",
+    //         height: 170,
+    //         weight: 50,
+    //         hand: "Правый"
+    //     }
+    // },
+    // {
+    //     src: "/covers/boy1.webp",
+    //     name: "Никитин Александр",
+    //     number: 3,
+    //     data: {
+    //         birth: "30.10.2018",
+    //         position: "Защитник",
+    //         height: 170,
+    //         weight: 50,
+    //         hand: "Правый"
+    //     }
+    // },
+    // {
+    //     src: "/covers/boy1.webp",
+    //     name: "Никитин Александр",
+    //     number: 3,
+    //     data: {
+    //         birth: "30.10.2018",
+    //         position: "Защитник",
+    //         height: 170,
+    //         weight: 50,
+    //         hand: "Правый"
+    //     }
+    // },
+    // {
+    //     src: "/covers/boy1.webp",
+    //     name: "Никитин Александр",
+    //     number: 3,
+    //     data: {
+    //         birth: "30.10.2018",
+    //         position: "Защитник",
+    //         height: 170,
+    //         weight: 50,
+    //         hand: "Правый"
+    //     }
+    // }
 ];
 
 export const Team = () => {
@@ -198,7 +199,7 @@ export const Team = () => {
                     animate={{ translateY: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeInOut", delay: 0.1 }}
                 >
-                    <h1 className="h1">{t("team.title")}</h1>
+                    <h1 className="h1 text-shadow-white">{t("team.title")}</h1>
                     <div style={{ position: "absolute", right: 0, bottom: "calc(50% - 17.5px)" }}>
                         <GlowButton
                             bg="#000"
@@ -218,20 +219,25 @@ export const Team = () => {
                     </div>
                 </motion.div>
             )}
+            <div style={{ width: 500, height: 500 }}>
+                <Coach />
+            </div>
             <div className={styles.teamItems}>
                 {teamData.map((item, i) => {
                     return (
                         <div key={`team-${i}`} onClick={() => handleOpenModal(item)} className={styles.teamItem}>
-                            <img src={item.src} alt="player" />
-                            <div style={{
-                                position: "absolute",
-                                width: "100%",
-                                bottom: 0,
-                                background: "#FFF",
-                                height: 75
-                            }}>
-                                <h2>{item.name}</h2>
-                                <p>{item.number}</p>
+                            <div className={styles.teamItemContent}>
+                                <img src={item.src} alt="player" />
+                                <div style={{
+                                    position: "absolute",
+                                    width: "100%",
+                                    bottom: 0,
+                                    background: "#FFF",
+                                    height: 75
+                                }}>
+                                    <h2>{item.name}</h2>
+                                    <p>{item.number}</p>
+                                </div>
                             </div>
                         </div>
                     )

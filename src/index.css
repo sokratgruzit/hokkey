@@ -8,6 +8,7 @@ body {
   font-family: 'Roboto', sans-serif;
   width: 100%;
   height: 100%;
+  background: rgba(210, 0, 42, 1);
 }
 
 .cls-1, .cls-2 {
@@ -46,6 +47,42 @@ body {
   font-size: 4rem !important;
 }
 
+.text-shadow {
+  text-shadow:
+   -3px -3px 0 #000000, /* Top-left */
+    3px -3px 0 #000000, /* Top-right */
+   -3px  3px 0 #000000, /* Bottom-left */
+    3px  3px 0 #000000, /* Bottom-right */
+    0px  -3px 0 #000000, /* Top */
+    0px   3px 0 #000000, /* Bottom */
+   -3px  0px 0 #000000,  /* Left */
+    3px  0px 0 #000000;  /* Right */
+}
+
+.text-shadow-red {
+  text-shadow:
+   -3px -3px 0 #c00, /* Top-left */
+    3px -3px 0 #c00, /* Top-right */
+   -3px  3px 0 #c00, /* Bottom-left */
+    3px  3px 0 #c00, /* Bottom-right */
+    0px  -3px 0 #c00, /* Top */
+    0px   3px 0 #c00, /* Bottom */
+   -3px  0px 0 #c00,  /* Left */
+    3px  0px 0 #c00;  /* Right */
+}
+
+.text-shadow-white {
+  text-shadow:
+   -3px -3px 0 #FFF, /* Top-left */
+    3px -3px 0 #FFF, /* Top-right */
+   -3px  3px 0 #FFF, /* Bottom-left */
+    3px  3px 0 #FFF, /* Bottom-right */
+    0px  -3px 0 #FFF, /* Top */
+    0px   3px 0 #FFF, /* Bottom */
+   -3px  0px 0 #FFF,  /* Left */
+    3px  0px 0 #FFF;  /* Right */
+}
+
 @media (max-width: 1024px) {
   .h1 {
     font-size: 3rem !important;
@@ -55,6 +92,42 @@ body {
 @media (max-width: 768px) {
   .h1 {
     font-size: 2rem !important;
+  }
+
+  .text-shadow {
+    text-shadow:
+    -2px -2px 0 #000000, /* Top-left */
+      2px -2px 0 #000000, /* Top-right */
+    -2px  2px 0 #000000, /* Bottom-left */
+      2px  2px 0 #000000, /* Bottom-right */
+      0px  -2px 0 #000000, /* Top */
+      0px   2px 0 #000000, /* Bottom */
+    -2px  0px 0 #000000,  /* Left */
+      2px  0px 0 #000000;  /* Right */
+  }
+
+  .text-shadow-red {
+    text-shadow:
+    -2px -2px 0 #c00, /* Top-left */
+      2px -2px 0 #c00, /* Top-right */
+    -2px  2px 0 #c00, /* Bottom-left */
+      2px  2px 0 #c00, /* Bottom-right */
+      0px  -2px 0 #c00, /* Top */
+      0px   2px 0 #c00, /* Bottom */
+    -2px  0px 0 #c00,  /* Left */
+      2px  0px 0 #c00;  /* Right */
+  }
+
+  .text-shadow-white {
+    text-shadow:
+    -2px -2px 0 #FFF, /* Top-left */
+      2px -2px 0 #FFF, /* Top-right */
+    -2px  2px 0 #FFF, /* Bottom-left */
+      2px  2px 0 #FFF, /* Bottom-right */
+      0px  -2px 0 #FFF, /* Top */
+      0px   2px 0 #FFF, /* Bottom */
+    -2px  0px 0 #FFF,  /* Left */
+      2px  0px 0 #FFF;  /* Right */
   }
 }
 
