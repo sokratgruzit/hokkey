@@ -75,6 +75,7 @@ export const SignUp = () => {
         initial={{ translateY: -50, opacity: 0 }}
         animate={{ translateY: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="text-shadow"
       >
         {t("signUp.title")}
       </motion.h1>
@@ -146,24 +147,25 @@ export const SignUp = () => {
           {t("signUp.confirm")}
         </motion.label>
 
-        {error && <p className={styles.error}>{error}</p>}
-        {sent && <p className={styles.success}>{t("signUp.success")}</p>}
-
         <motion.span
           initial={{ translateY: -50, opacity: 0 }}
           animate={{ translateY: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeInOut", delay: 1.3 }}
+          style={{ width: "100%" }}
         >
           <GlowButton
             bg="#d2002a"
             glowColor="rgba(255, 255, 255, 0.26)"
             text={t("signUp.submit")}
             height="35px"
+            width="100%"
             fontSize="14px"
             shadowed={true}
             onClick={handleSubmit}
           />
         </motion.span>
+        {error && <p className={styles.error}>{error}</p>}
+        {sent && <p className={styles.success}>{t("signUp.success")}</p>}
       </div>
 
       <div className={styles.knightBg} />

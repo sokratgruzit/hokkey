@@ -42,7 +42,7 @@ export const Gallery = () => {
                     animate={{ translateY: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeInOut", delay: 0.1 }}
                 >
-                    <h1 className="h1">{t("promo.gallery")}</h1>
+                    <h1 className="h1 text-shadow-white">{t("promo.gallery")}</h1>
                     <div style={{ marginRight: 20, marginLeft: 20 }}>
                         <GlowButton
                             bg="#000"

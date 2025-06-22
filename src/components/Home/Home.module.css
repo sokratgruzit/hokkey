@@ -62,12 +62,19 @@ h2 {
 /* About */
 .aboutContainer {
     width: 100%;
-    padding: 0 20px;
+    padding: 20px;
     display: flex;
     gap: 20px;
     align-items: center;
     position: relative;
     height: auto;
+    flex-direction: column;
+}
+
+.sectionsWrap {
+    position: relative;
+    display: flex;
+    gap: 20px;
 }
 
 .section {
@@ -76,9 +83,37 @@ h2 {
     position: relative;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 20px 0px;
+    gap: 20px;
     height: 100%;
+}
+
+.sectionContent {
+    height: 400px;
+    justify-content: space-between;
+    overflow-y: auto;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #d2002a black; /* Firefox */
+}
+
+
+/* Chrome, Edge, Safari */
+.sectionContent::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.sectionContent::-webkit-scrollbar-track {
+  background: black;
+  border-radius: 6px;
+}
+
+.sectionContent::-webkit-scrollbar-thumb {
+  background-color: #d2002a;
+  border-radius: 6px;
+}
+
+.sectionContent::-webkit-scrollbar-button {
+  display: none; /* Убирает стрелки */
 }
 
 .knightBg {
@@ -87,26 +122,29 @@ h2 {
     height: 90%;
     top: 10%;
     background: url("/appIcons/red-knights.svg") center/contain no-repeat;
-    opacity: 0.05;
+    opacity: 0.25;
     z-index: -1;
-}
-
-.section h2 {
-    color: #d2002a;
-    font-size: 4rem;
-    text-align: center;
 }
 
 .player {
     position: relative;
-    overflow: hidden;
     width: 100%;
     min-height: 400px;
-    border-radius: 10px;
+    padding: 10px;
+    border: 3px solid black;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.aboutImage {
     background-image: url("/covers/promo.webp");
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    border: 3px solid black;
     -webkit-box-shadow: inset 0px 0px 43px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: inset 0px 0px 43px 0px rgba(0,0,0,0.75);
     box-shadow: inset 0px 0px 43px 0px rgba(0,0,0,0.75);
@@ -126,10 +164,22 @@ h2 {
 }
 
 .sectionTitle {
-    border: 2px solid #d2002a;
+    border: 3px solid black;
     padding: 10px;
-    border-radius: 8px;
     height: 50%;
+    width: 100%;
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.titleContent {
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid black;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
 }
 
 .stats {
@@ -595,6 +645,8 @@ h2 {
     color: #000;
     position: relative;
     font-size: 5rem;
+    width: 70%;
+    text-align: start;
 }
 
 .teamItems {
@@ -608,14 +660,26 @@ h2 {
 
 .teamItem {
     position: relative;
-    width: calc(100% / 4 - 10px);
-    height: 250px;
+    width: calc(100% / 3 - 10px);
+    height: 350px;
     cursor: pointer;
-    border-radius: 8px;
+    border: 3px solid black;
     overflow: hidden;
     -webkit-box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.75);
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.teamItemContent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .teamItem img {
@@ -741,8 +805,21 @@ h2 {
 }
 
 @media screen and (max-width: 1024px) {
+    .newsWrap {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .newsItem {
+        width: calc(50% - 10px);
+    }
+
+    .teamItems {
+        justify-content: center;
+    }
+
     .teamItem {
-        width: calc(100% / 3 - 10px);
+        width: calc(100% / 2 - 10px);
     }
 
     .item {
@@ -794,6 +871,10 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
+    .sectionsWrap {
+        flex-direction: column;
+    }
+
     .teamItem {
         width: calc(100% / 2 - 10px);
     }

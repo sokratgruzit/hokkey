@@ -14,8 +14,6 @@ import { Home } from "./components/Home/Home";
 import { Policy } from "./components/Policy/Policy";
 import { SignUp } from "./components/SignUp/SignUp";
 
-import "./App.css";
-
 function App() {
   const dispatch = useDispatch();
   const { i18n } = useTranslation();
