@@ -1,0 +1,79 @@
+.modalLayout {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9000;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,.75);
+}
+
+.modal {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    z-index: 10000;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    background: #d2002a;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.modalTitleWrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modalTitleWrap h2 {
+    width: 50%;
+}
+
+.modalTitleWrap p {
+    font-size: 4.5rem;
+    color: #FFF;
+    line-height: 70px;
+}
+
+.modalBirth,
+.dataP p,
+.modalPosition p {
+    font-size: .75rem;
+    color: #FFF;
+}
+
+.dataP p {
+    margin-bottom: 5px;
+}
+
+.modalSeparator {
+    position: relative;
+    width: 100%;
+    border-bottom: 2.5px dotted #FFF;
+}
+
+.modalData {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.modalPosition {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.modalKnight {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    right: 10px;
+    bottom: 10px;
+}

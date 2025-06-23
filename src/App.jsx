@@ -13,6 +13,7 @@ import { Program } from "./components/Program/Program";
 import { Home } from "./components/Home/Home";
 import { Policy } from "./components/Policy/Policy";
 import { SignUp } from "./components/SignUp/SignUp";
+import { CoachPage } from "./components/Coach/CoachPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -54,6 +55,10 @@ function App() {
         <Route
           path="signup"
           element={<SignUp />}
+        />
+        <Route
+          path="team/:id"
+          element={<CoachPage />}
         />
         <Route
           path="team"
