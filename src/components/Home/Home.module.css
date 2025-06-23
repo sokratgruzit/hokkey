@@ -238,9 +238,12 @@ h2 {
 }
 
 .swiperItem {
-    height: 100%;
+    height: 90%;
     position: relative;
     width: 100%;
+    box-shadow: 5px 5px 0px 0px black;
+    -webkit-box-shadow: 5px 5px 0px 0px black;
+    -moz-box-shadow: 5px 5px 0px 0px black;
 }
 
 .pagination {
@@ -254,6 +257,7 @@ h2 {
     right: 20px;
     z-index: 1000;
     transition: .8s;
+    border: 3px solid white;
 }
 
 .pagination:hover {
@@ -262,13 +266,11 @@ h2 {
 
 .arrow {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    border-right: 3px solid #FFF;
-    border-bottom: 3px solid #FFF;
-    top: calc(50% - 15px);
-    left: 12px;
-    transform: rotate(-45deg);
+    width: 45px;
+    height: 45px;
+    top: calc(50% - 22.5px);
+    left: calc(50% - 20.5px);
+    transform: rotate(180deg);
 }
 /* End Gallery */
 
