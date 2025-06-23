@@ -16,6 +16,10 @@ const slidesData = [
     "/gallery/0.webp",
     "/gallery/1.webp",
     "/gallery/2.webp",
+    "/gallery/3.webp",
+    "/gallery/0.webp",
+    "/gallery/1.webp",
+    "/gallery/2.webp",
     "/gallery/3.webp"
 ];
 
@@ -42,7 +46,7 @@ export const Gallery = () => {
                     animate={{ translateY: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeInOut", delay: 0.1 }}
                 >
-                    <h1 className="h1 text-shadow-white">{t("promo.gallery")}</h1>
+                    <h1 style={{ textAlign: "start" }} className="h1 text-shadow-white">{t("promo.gallery")}</h1>
                     <div style={{ marginRight: 20, marginLeft: 20 }}>
                         <GlowButton
                             bg="#000"
@@ -64,8 +68,24 @@ export const Gallery = () => {
             )}
             <Swiper
                 className={styles.swiper}
-                spaceBetween={-50}
-                slidesPerView={1.5}
+                spaceBetween={10}
+                breakpoints={{
+                    320: {
+                        slidesPerView: 1,
+                    },
+                    480: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                    },
+                    1280: {
+                        slidesPerView: 4,
+                    },
+                    1440: {
+                        slidesPerView: 5
+                    }
+                }}
                 centeredSlides={true}
                 loop={true}
                 onTouchMove={() => (isDragging.current = true)}
@@ -82,7 +102,7 @@ export const Gallery = () => {
                             alt="slide"
                             animate={{
                                 scale: activeSlide === index ? 1 : 0.85,
-                                filter: activeSlide === index ? "blur(0px)" : "blur(8px)",
+                                opacity: activeSlide === index ? 1 : .4,
                             }}
                             transition={{ duration: 0.5, ease: "easeInOut" }}
                         />
@@ -90,7 +110,9 @@ export const Gallery = () => {
                 ))}
             </Swiper>
             <div onClick={handleSwitchSlide} className={styles.pagination}>
-                <div className={styles.arrow}></div>
+                <svg className={styles.arrow} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 512 512" xml:space="preserve">
+		            <path d="M476.92,493.76L240.333,256.32L476.707,18.24c4.16-4.16,4.16-10.88,0-15.04C474.68,1.067,472.013,0,469.24,0H286.627    c-2.88,0-5.547,1.173-7.573,3.2L35.107,248.853c-4.16,4.16-4.16,10.88,0,15.04l244.16,245.013    c2.027,2.027,4.693,3.093,7.573,3.093h182.507c5.867,0,10.667-4.8,10.667-10.667C480.013,498.56,478.947,495.787,476.92,493.76z     M291.213,490.667L57.72,256.32L291,21.333h152.533L217.72,248.853c-4.16,4.16-4.16,10.88,0,15.04l225.92,226.773H291.213z"/>
+                </svg>
             </div>
         </div>
     );
