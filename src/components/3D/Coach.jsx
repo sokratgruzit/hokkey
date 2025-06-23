@@ -57,8 +57,8 @@ export default function Coach({ coachId }) {
             />
             <OrbitControls
                 enableZoom={true}
-                minDistance={3}
-                maxDistance={6}
+                minDistance={8}
+                maxDistance={10}
                 enablePan={false}
                 maxPolarAngle={Math.PI / 2}
                 minPolarAngle={Math.PI / 2.5}

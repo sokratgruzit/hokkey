@@ -180,6 +180,7 @@ h2 {
     border: 3px solid black;
     background: rgba(0, 0, 0, 0.3);
     color: white;
+    display: block;
 }
 
 .stats {
@@ -661,7 +662,7 @@ h2 {
 .teamItem {
     position: relative;
     width: calc(100% / 3 - 10px);
-    height: 350px;
+    height: 400px;
     cursor: pointer;
     border: 3px solid black;
     overflow: hidden;
@@ -678,30 +679,39 @@ h2 {
     height: 100%;
     border: 3px solid black;
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-.teamItem img {
+.teamItemImg {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 75px);
 }
 
-.teamItem h2 {
-    color:#d2002a;
+.teamItemContent h2 {
+    color: #d2002a;
     font-size: 1.5rem;
     width: 50%;
-    position: absolute;
-    left: 10px;
-    bottom: 10px;
+    position: relative;
 }
 
-.teamItem p {
-    font-size: 4rem;
-    color: #d2002a;
+.knightIcon {
+    position: relative;
+    width: 70px;
+    height: 70px;
+}
+
+.teamItemInfo {
     position: absolute;
-    right: 10px;
-    bottom: 0px;
+    width: 100%;
+    bottom: 0;
+    background: none;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    border-top: 3px solid black;
 }
 
 @keyframes counter-rotate {

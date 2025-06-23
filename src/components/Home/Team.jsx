@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 
 import { GlowButton } from "../UI/GlowButton";
-import Coach from "../3D/Coach";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -16,102 +15,18 @@ const teamData = [
     {
         src: "/covers/boy1.webp",
         name: "Никитин Александр",
-        number: 3,
-        data: {
-            birth: "30.10.2018",
-            position: "Защитник",
-            height: 170,
-            weight: 50,
-            hand: "Правый"
-        },
         id: "zaharov"
     },
     {
         src: "/covers/boy1.webp",
         name: "Гречанников Матвей",
-        number: 71,
-        data: {
-            birth: "30.10.2018",
-            position: "Защитник",
-            height: 170,
-            weight: 50,
-            hand: "Правый"
-        },
         id: "zaharov"
     },
     {
         src: "/covers/boy1.webp",
         name: "Скляров Артем",
-        number: 28,
-        data: {
-            birth: "30.10.2018",
-            position: "Защитник",
-            height: 170,
-            weight: 50,
-            hand: "Правый"
-        },
         id: "zaharov"
-    },
-    // {
-    //     src: "/covers/boy1.webp",
-    //     name: "Никитин Александр",
-    //     number: 3,
-    //     data: {
-    //         birth: "30.10.2018",
-    //         position: "Защитник",
-    //         height: 170,
-    //         weight: 50,
-    //         hand: "Правый"
-    //     }
-    // },
-    // {
-    //     src: "/covers/boy1.webp",
-    //     name: "Никитин Александр",
-    //     number: 3,
-    //     data: {
-    //         birth: "30.10.2018",
-    //         position: "Защитник",
-    //         height: 170,
-    //         weight: 50,
-    //         hand: "Правый"
-    //     }
-    // },
-    // {
-    //     src: "/covers/boy1.webp",
-    //     name: "Никитин Александр",
-    //     number: 3,
-    //     data: {
-    //         birth: "30.10.2018",
-    //         position: "Защитник",
-    //         height: 170,
-    //         weight: 50,
-    //         hand: "Правый"
-    //     }
-    // },
-    // {
-    //     src: "/covers/boy1.webp",
-    //     name: "Никитин Александр",
-    //     number: 3,
-    //     data: {
-    //         birth: "30.10.2018",
-    //         position: "Защитник",
-    //         height: 170,
-    //         weight: 50,
-    //         hand: "Правый"
-    //     }
-    // },
-    // {
-    //     src: "/covers/boy1.webp",
-    //     name: "Никитин Александр",
-    //     number: 3,
-    //     data: {
-    //         birth: "30.10.2018",
-    //         position: "Защитник",
-    //         height: 170,
-    //         weight: 50,
-    //         hand: "Правый"
-    //     }
-    // }
+    }
 ];
 
 export const Team = () => {
@@ -155,16 +70,14 @@ export const Team = () => {
                     return (
                         <Link to={`/team/${item.id}`} key={`team-${i}`} className={styles.teamItem}>
                             <div className={styles.teamItemContent}>
-                                <img src={item.src} alt="player" />
-                                <div style={{
-                                    position: "absolute",
-                                    width: "100%",
-                                    bottom: 0,
-                                    background: "#FFF",
-                                    height: 75
-                                }}>
-                                    <h2>{item.name}</h2>
-                                    <p>{item.number}</p>
+                                <img className={styles.teamItemImg} src={item.src} alt="player" />
+                                <div className={styles.teamItemInfo}>
+                                    <h2 className="text-shadow-small">{item.name}</h2>
+                                    <img 
+                                        src="/appIcons/red-knights.svg" 
+                                        alt="logo" 
+                                        className={styles.knightIcon}
+                                    />
                                 </div>
                             </div>
                         </Link>
