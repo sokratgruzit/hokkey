@@ -59,6 +59,18 @@ body {
     3px  0px 0 #000000;  /* Right */
 }
 
+.text-shadow-small {
+  text-shadow:
+   -2px -2px 0 #000000, /* Top-left */
+    2px -2px 0 #000000, /* Top-right */
+   -2px  2px 0 #000000, /* Bottom-left */
+    2px  2px 0 #000000, /* Bottom-right */
+    0px  -2px 0 #000000, /* Top */
+    0px   2px 0 #000000, /* Bottom */
+   -2px  0px 0 #000000,  /* Left */
+    2px  0px 0 #000000;  /* Right */
+}
+
 .text-shadow-red {
   text-shadow:
    -3px -3px 0 #c00, /* Top-left */

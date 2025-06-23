@@ -53,9 +53,9 @@ export const About = () => {
                             ease: "easeInOut"
                         }}
                     >
-                        <div className={styles.titleContent}>
+                        <span className={styles.titleContent}>
                             {t("promo.aboutDescr")}
-                        </div>
+                        </span>
                     </motion.p>}
                     {play && <motion.p 
                         className={styles.sectionTitle}
@@ -66,9 +66,9 @@ export const About = () => {
                             ease: "easeInOut"
                         }}
                     >
-                        <div className={styles.titleContent}>
+                        <span className={styles.titleContent}>
                             {t("promo.listItem1")}
-                        </div>
+                        </span>
                     </motion.p>}
                     {play && <motion.p 
                         className={styles.sectionTitle}
@@ -79,9 +79,9 @@ export const About = () => {
                             ease: "easeInOut"
                         }}
                     >
-                        <div className={styles.titleContent}>
+                        <span className={styles.titleContent}>
                             {t("promo.listItem2")}
-                        </div>
+                        </span>
                     </motion.p>}
                     {/* {play && <motion.div 
                         className={styles.list}

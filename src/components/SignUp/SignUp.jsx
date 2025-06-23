@@ -122,16 +122,24 @@ export const SignUp = () => {
           transition={{ delay: 0.8 }}
         />
 
-        <motion.input
-          type="number"
-          placeholder={t("signUp.inputYear")}
-          value={birthYear}
-          onChange={(e) => setBirthYear(e.target.value)}
-          className={styles.input}
+        <motion.div
+          className={styles.inputWrapper}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.95 }}
-        />
+        >
+          <input
+            type="number"
+            placeholder={t("signUp.inputYear")}
+            value={birthYear}
+            onChange={(e) => setBirthYear(e.target.value)}
+            className={styles.inputNoArrows}
+          />
+          <div className={styles.customArrows}>
+            <button type="button" onClick={() => setBirthYear(prev => String(Number(prev || 0) + 1))}>▲</button>
+            <button type="button" onClick={() => setBirthYear(prev => String(Math.max(0, Number(prev || 0) - 1)))}>▼</button>
+          </div>
+        </motion.div>
 
         <motion.label
           className={styles.checkboxLabel}
