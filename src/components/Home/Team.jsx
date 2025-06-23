@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useIsVisible } from "react-is-visible";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 
@@ -23,7 +23,8 @@ const teamData = [
             height: 170,
             weight: 50,
             hand: "Правый"
-        }
+        },
+        id: "zaharov"
     },
     {
         src: "/covers/boy1.webp",
@@ -35,7 +36,8 @@ const teamData = [
             height: 170,
             weight: 50,
             hand: "Правый"
-        }
+        },
+        id: "zaharov"
     },
     {
         src: "/covers/boy1.webp",
@@ -47,7 +49,8 @@ const teamData = [
             height: 170,
             weight: 50,
             hand: "Правый"
-        }
+        },
+        id: "zaharov"
     },
     // {
     //     src: "/covers/boy1.webp",
@@ -118,80 +121,8 @@ export const Team = () => {
     const isVisible = useIsVisible(ref);
     const dispatch = useDispatch();
 
-    const [modal, setModal] = useState({
-        open: false,
-        data: null
-    });
-
-    const handleCloseModal = () => {
-        setModal({
-            open: false,
-            data: null
-        });
-    };
-
-    const handleOpenModal = (data) => {
-        setModal({
-            open: true,
-            data
-        });
-    };
-
     return (
         <div ref={ref} className={styles.teamContainer}>
-            {modal.open && <div onClick={handleCloseModal} className={styles.modalLayout} />}
-            {modal.open && <motion.div 
-                className={styles.modal}
-                onClick={handleCloseModal}
-                initial={{ sacle: 0 }}
-                animate={{ scale: [0, 1] }}
-                transition={{
-                    type: "spring",
-                    stiffness: 200,
-                    damping: 15,
-                    duration: .5
-                }}
-            >
-                <div className={styles.modalTitleWrap}>
-                    <h2>{modal.data.name}</h2>
-                    <p>{modal.data.number}</p>
-                </div>
-                <div className={styles.modalSeparator} />
-                <p className={styles.modalBirth}>{`${t("team.birth")} ${modal.data.data.birth}`}</p>
-                <div className={styles.modalSeparator} />
-                <div className={styles.modalData}>
-                    <div className={styles.dataP}>
-                        <p>{t("team.height")}</p>
-                        <p>{modal.data.data.height}</p>
-                    </div>
-                    <div className={styles.dataP}>
-                        <p>{t("team.weight")}</p>
-                        <p>{modal.data.data.weight}</p>
-                    </div>
-                    <div className={styles.dataP}>
-                        <p>{t("team.hand")}</p>
-                        <p>{modal.data.data.hand}</p>
-                    </div>
-                </div>
-                <div className={styles.modalPosition}>
-                    <p>{t("team.position")}</p>
-                    <p>{modal.data.data.position}</p>
-                </div>
-                <motion.img 
-                    src="/appIcons/red-knights.svg" 
-                    alt="logo" 
-                    className={styles.modalKnight}
-                    initial={{ scale: 0 }}
-                    animate={{ scale: [0, 1] }}
-                    transition={{
-                        type: "spring",
-                        stiffness: 200,
-                        damping: 10,
-                        duration: .5,
-                        delay: .25
-                    }}
-                />
-            </motion.div>}
             {isVisible && (
                 <motion.div 
                     className={styles.titleWrap}
@@ -219,13 +150,10 @@ export const Team = () => {
                     </div>
                 </motion.div>
             )}
-            <div style={{ width: 500, height: 500 }}>
-                <Coach />
-            </div>
             <div className={styles.teamItems}>
                 {teamData.map((item, i) => {
                     return (
-                        <div key={`team-${i}`} onClick={() => handleOpenModal(item)} className={styles.teamItem}>
+                        <Link to={`/team/${item.id}`} key={`team-${i}`} className={styles.teamItem}>
                             <div className={styles.teamItemContent}>
                                 <img src={item.src} alt="player" />
                                 <div style={{
@@ -239,7 +167,7 @@ export const Team = () => {
                                     <p>{item.number}</p>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     )
                 })}
             </div>
