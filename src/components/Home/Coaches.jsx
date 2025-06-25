@@ -6,23 +6,23 @@ import { motion } from "framer-motion";
 
 import styles from "./Home.module.css";
 
-const teamData = [
-    {
-        src: "/coaches/coach1.png",
-        name: "Никитин Александр",
-        id: "zaharov"
-    },
-    {
-        src: "/coaches/coach1.png",
-        name: "Гречанников Матвей",
-        id: "zaharov2"
-    },
-];
-
 export const Coaches = () => {
     const { t } = useTranslation("common");
     const ref = useRef();
     const isVisible = useIsVisible(ref);
+
+    const teamData = [
+        {
+            src: "/coaches/shakarov.png",
+            name: t("team.shortShakarov"),
+            id: "shakarov"
+        },
+        {
+            src: "/coaches/matuhov.png",
+            name: t("team.shortMatuhov"),
+            id: "matuhov"
+        },
+    ];
 
     return (
         <div ref={ref} className={styles.teamContainer}>

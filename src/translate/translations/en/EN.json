@@ -115,11 +115,59 @@
   "team": {
     "title": "Coaching staff",
     "btnText": "All trainers",
-    "birth": "Date of birth:",
-    "height": "Height",
-    "weight": "Weight",
-    "hand": "Grip",
-    "position": "Role:"
+    "shakarov": "Shakarov Tigran Armenovich",
+    "shortShakarov": "Shakarov Tigran",
+    "matuhov": "Matuhov Eduard Olegovich",
+    "shortMatuhov": "Matuhov Eduard",
+    "education": "Education",
+    "career": "Playing career",
+    "exp": "Coaching experience",
+    "back": "Home page",
+    "expText": "Coaching experience (years):",
+    "fullName": "Full name:",
+    "lang": "Language:"
+  },
+  "careerShakarov": {
+    "0": "2003 - 2006 - as part of the 'DYUSSh'№10 team 'ORBITA 1997'",
+    "1": "2006 - 2007 - as part of the 'CSKA 1998' team",
+    "2": "2007 - 2010 - as part of the 'KRYLYA SOVETOV 1998' team",
+    "3": "2011 - 2013 - as part of the 'HC Center 1998' team",
+    "4": "2014 - 2015 - as part of the 'LOKOMOTIV 1998' team",
+    "5": "2015 to 2017 - as part of the HC 'ARARAT' team",
+    "6": "2015 to 2017- Armenian National Team"
+  },
+  "expShakarov": {
+    "0": "Assistant coach of 'HC VITEBSK 2005' from 2017 to 2018",
+    "1": "Hockey School 'Led' from 2019 to 2021",
+    "2": "Hockey School 'NOSKEY SNANCE' from 2021 to 2022",
+    "3": "Hockey School 'Atlanty Kids' 2023- to 2025"
+  },
+  "educationShakarov": {
+    "0": "2013-2017 Secondary Specialized State School of Olympic Reserve GUOR (in ice hockey)",
+    "1": "2017-2021 Bachelor's degree SSUS in the direction of Physical Education",
+    "2": "2021- 2023 Master's degree SSUS in the direction of Sports",
+    "3": "2023-2026 Postgraduate study SSUS - Faculty of Theory and Methodology of Sports"
+  },
+  "careerMatuhov": {
+    "0": "HC 'Spartak' Moscow 1989-1991 super league",
+    "1": "HC Torpedo Yaroslavl 1991-1994 Super League",
+    "2": "HC 'Crystal' Elektrostal 1994-1995 super league",
+    "3": "HC Skellefteå Sweden 1995-1996 extraliga",
+    "4": "HC 'Molot' Perm 1996-1997 super league",
+    "5": "HC Ferencvaros Hungary 1997-1998 extraliga"
+  },
+  "expMatuhov": {
+    "0": "1995-1996 hockey school 'Krif' Skelleftea",
+    "1": "1997-1998 hockey school 'Ferencvros'",
+    "2": "1999-2006 DYUSSh 'Vympel', 2004-2006 senior coach-teacher",
+    "3": "2006-2007 SDYUSHOR 'Atlant'",
+    "4": "2008-2016 SDYUSHOR 'Olimpiets'"
+  },
+  "educationMatuhov": {
+    "0": "State Central Order of Lenin Institute of Physical Culture",
+    "1": "Specialty: physical culture and sport",
+    "2": "1988-1993",
+    "3": "Assigned qualification: Ice hockey teacher-coach"
   }
 }
 
