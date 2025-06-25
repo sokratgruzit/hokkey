@@ -5,6 +5,15 @@
     "media": "Media",
     "program": "Program"
   },
+  "admin": {
+    "loginTitle": "Admin panel",
+    "loginDescr": "Enter login and password",
+    "inputLogin": "Login",
+    "inputPass": "Password",
+    "btnLogin": "Login",
+    "btnLogout": "Logout",
+    "loginErr": "Incorrect login or password"
+  },
   "footer": {
     "policy": "Privacy policy",
     "copyright": "Copyright",
@@ -70,17 +79,20 @@
     "profitText6": "Спортивный класс - это возможность добиться высоких результатов и в спорте, и в школе. В данный момент мы формируем спортивный класс на 2025 - 2026 учебный год. Юные спортсмены смогут полноценно совмещать и школьную программу, и спортивные тренировки. Расписание тренировок согласовано с расписанием в школе."
   },
   "trainings": {
-    "title": "Тренировки",
-    "title1": "Тактические Занятия",
-    "text1": "Отработка стратегии команды, которая позволяет в будущем справиться с тактическими задачами во время игры против соперника. Разбор сыгранных турниров - обязательная часть урока.",
-    "title2": "Бросковые Тренировки",
-    "text2": "Бросковые тренировки проходят в специальной зоне, оснащённой воротами и синтетическим льдом. Здесь ребята учатся сильному кистевому броску, контролю шайбы, броскам и щелчкам сходу и с места.",
-    "title3": "Дриблинг",
-    "text3": "Искусство владения шайбой начинается тут. Правильное расположение рук и клюшки, бросок и передача, умение исполнять обманные движения и финты изначально тренируются на дриблинге.",
-    "title4": "ОФП",
-    "text4": "Тренировка, направленная на совершенствование всех физических качеств спортсмена с целью повысить пределы роста хоккейного мастерства: скорость, выносливость, сила.",
-    "title5": "Тренировка на льду",
-    "text5": "Тренировки на льду развивают быстрое принятие решения, улучшают командные действия, координацию и баланс. Правильная командная работа на льду - залог победы на турнире."
+    "title": "Trainings",
+    "title1": "Tactical Training",
+    "text1": "Working out a team strategy that will allow you to cope with tactical tasks in the future during a game against an opponent. Analysis of tournaments played is a mandatory part of the lesson.",
+    "title2": "Shooting Training",
+    "text2": "Shooting training takes place in a special area equipped with goals and synthetic ice. Here the guys learn a strong wrist shot, puck control, shots and slapshots on the move and from a standing start.",
+    "title3": "General physical training",
+    "text3": "Training aimed at improving all physical qualities of an athlete in order to increase the limits of growth of hockey skills: speed, endurance, strength.",
+    "title4": "On-ice training",
+    "text4": "On-ice training develops quick decision-making, improves teamwork, coordination and balance. Proper teamwork on the ice is the key to winning the tournament.",
+    "info1": "Professional coaching staff: our coaches are experienced specialists who love hockey and know how to find an approach to each child. They not only teach the technique and tactics of the game, but also instill a love of hockey, form a team spirit and cultivate a sporting character.",
+    "info2": "Individual approach: we understand that each child is unique. Therefore, our training programs are developed taking into account the age, level of training and individual characteristics of each young hockey player.",
+    "info3": "Modern training methods: we use the most modern and effective teaching methods based on global experience in training hockey players.",
+    "info4": "Modern infrastructure: our school has everything necessary for effective training: a modern ice rink, changing rooms, a gym and a general physical training area.",
+    "info5": "Friendly atmosphere: the atmosphere of friendship, support and mutual assistance reigns in the 'Red Knights'. We create conditions for the comfortable and harmonious development of each child."
   },
   "progress": {
     "title": "Развитие Воспитанников",

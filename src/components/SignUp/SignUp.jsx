@@ -167,7 +167,7 @@ export const SignUp = () => {
             text={t("signUp.submit")}
             height="35px"
             width="100%"
-            fontSize="14px"
+            fontSize="18px"
             shadowed={true}
             onClick={handleSubmit}
           />

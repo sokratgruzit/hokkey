@@ -24,7 +24,7 @@ export const GlowButton = ({
 
   const handleGlowClick = (e) => {
     controls.start({
-      scale: [1, 0.75, 1],
+      scale: [.97, 0.75, 1],
       transition: { duration: 0.2, ease: "easeInOut" },
     });
 
@@ -36,12 +36,23 @@ export const GlowButton = ({
     }
   };
 
+  const handleHover = (hovered) => {
+    controls.start({
+      scale: [hovered ? 1 : .97, hovered ? .97 : 1],
+      transition: { duration: 0.2, ease: "easeInOut" },
+    });
+  };
+
   return (
     <motion.div
       className={styles.buttonWrap}
       style={{ width, height, ...style }}
       animate={controls}
       onClick={handleGlowClick}
+      onMouseOver={() => handleHover(true)}
+      onTouchStart={() => handleHover(true)}
+      onMouseLeave={() => handleHover(false)}
+      onTouchMove={() => handleHover(false)}
     >
       <div id={id} className={styles.btnLayout}></div>
       {label && <p>{label}</p>}
@@ -52,7 +63,7 @@ export const GlowButton = ({
           height,
           width: bgWidth,
           border: shadowed ? "1px solid #59657B" : "1px solid #000",
-          boxShadow: shadowed ? "0px 1px 1px 0px #000" : "none",
+          boxShadow: shadowed ? "0px 2px 2px 0px #000" : "none",
         }}
       >
         <p style={{ fontSize }}>{text}</p>

@@ -62,7 +62,7 @@ export const Promo = () => {
                     glowColor="rgba(255, 255, 255, 0.26)"
                     text={t("promo.joinUs")}
                     height="35px"
-                    fontSize="14px"
+                    fontSize="18px"
                     shadowed={true}
                     onClick={handleSignUp}
                 />

@@ -28,7 +28,7 @@ export const About = () => {
                 className="h1 text-shadow"
                 style={{ color: "white", width: "100%", textAlign: "start" }}
             >{t("promo.aboutUs")}</motion.h2>}
-            <dic className={styles.sectionsWrap}>
+            <div className={styles.sectionsWrap}>
                 <div className={styles.section}>
                     {play && <motion.div 
                         className={styles.player}
@@ -121,7 +121,7 @@ export const About = () => {
                         </div>
                     </motion.div>} */}
                 </div>
-            </dic>
+            </div>
         </div>
     )
 };

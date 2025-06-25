@@ -80,23 +80,15 @@ export const Header = () => {
             </Link>
             <Link 
                 to="/about" 
-                className={styles.headerLink}
+                className={`${styles.headerLink} ${activeTab === "about" ? "text-shadow-small" : null}`}
                 onClick={() => handleActiveTab("about")}
                 style={{
                     color: activeTab === "about" ? "#d2002a" : "#fff"
                 }}
             >{t("header.about")}</Link>
             <Link 
-                to="/team" 
-                className={styles.headerLink}
-                onClick={() => handleActiveTab("team")}
-                style={{
-                    color: activeTab === "team" ? "#d2002a" : "#fff"
-                }}
-            >{t("header.team")}</Link>
-            <Link 
                 to="/media" 
-                className={styles.headerLink}
+                className={`${styles.headerLink} ${activeTab === "media" ? "text-shadow-small" : null}`}
                 onClick={() => handleActiveTab("media")}
                 style={{
                     color: activeTab === "media" ? "#d2002a" : "#fff"
@@ -104,7 +96,7 @@ export const Header = () => {
             >{t("header.media")}</Link>
             <Link 
                 to="/program" 
-                className={styles.headerLink}
+                className={`${styles.headerLink} ${activeTab === "program" ? "text-shadow-small" : null}`}
                 onClick={() => handleActiveTab("program")}
                 style={{
                     color: activeTab === "program" ? "#d2002a" : "#fff"

@@ -17,10 +17,13 @@ const slidesData = [
     "/gallery/1.webp",
     "/gallery/2.webp",
     "/gallery/3.webp",
-    "/gallery/0.webp",
-    "/gallery/1.webp",
-    "/gallery/2.webp",
-    "/gallery/3.webp"
+    "/gallery/4.webp",
+    "/gallery/5.webp",
+    "/gallery/6.webp",
+    "/gallery/7.webp",
+    "/gallery/8.webp",
+    "/gallery/9.webp",
+    "/gallery/10.webp"
 ];
 
 export const Gallery = () => {
@@ -53,7 +56,7 @@ export const Gallery = () => {
                             glowColor="rgba(255, 255, 255, 0.26)"
                             text={t("promo.allPhoto")}
                             height="35px"
-                            fontSize="14px"
+                            fontSize="18px"
                             shadowed={true}
                             onClick={() => {
                                 navigate("/media");
@@ -110,7 +113,7 @@ export const Gallery = () => {
                 ))}
             </Swiper>
             <div onClick={handleSwitchSlide} className={styles.pagination}>
-                <svg className={styles.arrow} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 512 512" xml:space="preserve">
+                <svg className={styles.arrow} xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 512 512">
 		            <path d="M476.92,493.76L240.333,256.32L476.707,18.24c4.16-4.16,4.16-10.88,0-15.04C474.68,1.067,472.013,0,469.24,0H286.627    c-2.88,0-5.547,1.173-7.573,3.2L35.107,248.853c-4.16,4.16-4.16,10.88,0,15.04l244.16,245.013    c2.027,2.027,4.693,3.093,7.573,3.093h182.507c5.867,0,10.667-4.8,10.667-10.667C480.013,498.56,478.947,495.787,476.92,493.76z     M291.213,490.667L57.72,256.32L291,21.333h152.533L217.72,248.853c-4.16,4.16-4.16,10.88,0,15.04l225.92,226.773H291.213z"/>
                 </svg>
             </div>
