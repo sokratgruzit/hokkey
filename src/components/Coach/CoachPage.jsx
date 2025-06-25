@@ -73,188 +73,182 @@ export const CoachPage = () => {
     const coach = coaches[id];
 
     return (
-        <div className={styles.container}>
-            <div ref={containerRef} className={styles.content}>
-                <motion.div 
-                    className={styles.generalData}
-                    drag
-                    dragConstraints={containerRef}
-                    dragElastic={0.1}
-                >
-                    <div className={styles.dataItem}>
-                        <span>{t("team.lang")}</span> 
-                        <Languages />
-                    </div>
-                    <div className={styles.dataItem}>
-                        <span>{t("team.fullName")}</span> 
-                        <span>{coach.name}</span>
-                    </div>
-                    <div className={styles.dataItem}>
-                        <span>{t("team.expText")}</span> 
-                        <span>{coach.expTime}</span>
-                    </div>
-                    <motion.span
-                        initial={{ translateY: -50, opacity: 0 }}
-                        animate={{ translateY: 0, opacity: 1 }}
-                        transition={{
-                            duration: .8,
-                            ease: "easeInOut",
-                            delay: .2
-                        }}
-                    >
-                        <GlowButton
-                            bg="#d2002a"
-                            glowColor="rgba(255, 255, 255, 0.26)"
-                            text={t("team.back")}
-                            height="35px"
-                            fontSize="14px"
-                            shadowed={true}
-                            onClick={() => navigate(-1)}
-                        />
-                    </motion.span>
-                </motion.div>
-                <div className={styles.titles}>
-                    <BlockWithBorder width={"calc(100% / 3)"}>
-                        <h2 className={styles.title}>{t("team.career")}</h2>
-                    </BlockWithBorder>
-                    <BlockWithBorder width={"calc(100% / 3)"}>
-                        <h2 className={styles.title}>{t("team.education")}</h2>
-                    </BlockWithBorder>
-                    <BlockWithBorder width={"calc(100% / 3)"}>
-                        <h2 className={styles.title}>{t("team.exp")}</h2>
-                    </BlockWithBorder>    
-                </div>
-                <div className={styles.descriptions}>
-                    <div className={styles.items}>
-                        <div 
-                            className={styles.vertical} 
-                            style={{
-                                height: `${80 * coach.gameCareer.length + 82.5}px`
-                            }}
-                        >
-                            {Array.from({ length: coach.gameCareer.length }, (_, i) => (
-                                <motion.div
-                                    key={`vertical-gameCareer-${i}`}
-                                    className={styles.lineItem}
-                                    style={{ bottom: `${i * 80}px` }}
-                                    initial={{ height: 0 }}
-                                    animate={{ height: 40 }}
-                                    transition={{
-                                        delay: 0.3 * i,
-                                        duration: 0.4,
-                                        ease: "easeInOut"
-                                    }}
-                                />
-                            ))}
-                        </div>
-                        {coach.gameCareer.map((c, i) => {
-                            return (
-                                <BlockWithBorder key={`career-${i}`} delay={0.6 * i}>
-                                    <p className={styles.item}>{c}</p>
-                                </BlockWithBorder>
-                            )
-                        })}
-                    </div>
-                    <div className={styles.items}>
-                        <div 
-                            className={styles.vertical} 
-                            style={{
-                                height: `${80 * coach.education.length + 82.5}px`
-                            }}
-                        >
-                            {Array.from({ length: coach.education.length }, (_, i) => (
-                                <motion.div
-                                    key={`vertical-education-${i}`}
-                                    className={styles.lineItem}
-                                    style={{ bottom: `${i * 80}px` }}
-                                    initial={{ height: 0 }}
-                                    animate={{ height: 40 }}
-                                    transition={{
-                                        delay: 0.3 * i,
-                                        duration: 0.4,
-                                        ease: "easeInOut"
-                                    }}
-                                />
-                            ))}
-                        </div>
-                        {coach.education.map((c, i) => {
-                            return (
-                                <BlockWithBorder key={`education-${i}`} delay={0.6 * i}>
-                                    <p className={styles.item}>{c}</p>
-                                </BlockWithBorder>
-                            )
-                        })}
-                    </div>
-                    <div className={styles.items}>
-                        <div 
-                            className={styles.vertical} 
-                            style={{
-                                height: `${80 * coach.exp.length + 82.5}px`
-                            }}
-                        >
-                            {Array.from({ length: coach.exp.length }, (_, i) => (
-                                <motion.div
-                                    key={`vertical-exp-${i}`}
-                                    className={styles.lineItem}
-                                    style={{ bottom: `${i * 80}px` }}
-                                    initial={{ height: 0 }}
-                                    animate={{ height: 40 }}
-                                    transition={{
-                                        delay: 0.3 * i,
-                                        duration: 0.4,
-                                        ease: "easeInOut"
-                                    }}
-                                />
-                            ))}
-                        </div>
-                        {coach.exp.map((c, i) => {
-                            return (
-                                <BlockWithBorder key={`exp-${i}`} delay={0.6 * i}>
-                                    <p className={styles.item}>{c}</p>
-                                </BlockWithBorder>
-                            )
-                        })}
-                    </div>
-                </div>
-            </div>
-            <div style={{ 
-                position: "absolute",
-                width: 350, 
-                height: 350,
-                bottom: 0,
-                right: 0
-            }}>
+        <div ref={containerRef} className={styles.container}>
+            <div className={styles.headWrap}>
                 <ModelCanvas 
                     coachId={id} 
                     scale={0.09}
                     position={[0, 0, 0]} 
                 />
             </div>
-            <div className={styles.brain}>
-                <RotatingObjectCanvas
-                    path="/models/brain.obj"
-                    scale={0.12}
-                    floatY
-                    rotation={[-Math.PI / 2, 0, Math.PI / 0.27]}
-                    materialProps={{ color: "#fff", metalness: 1.5, roughness: 0.35 }}
-                />
+            <motion.div 
+                className={styles.generalData}
+                drag
+                dragConstraints={containerRef}
+                dragElastic={0.1}
+            >
+                <div className={styles.dataItem}>
+                    <span>{t("team.lang")}</span> 
+                    <Languages />
+                </div>
+                <div className={styles.dataItem}>
+                    <span>{t("team.fullName")}</span> 
+                    <span>{coach.name}</span>
+                </div>
+                <div className={styles.dataItem}>
+                    <span>{t("team.expText")}</span> 
+                    <span>{coach.expTime}</span>
+                </div>
+                <motion.span
+                    initial={{ translateY: -50, opacity: 0 }}
+                    animate={{ translateY: 0, opacity: 1 }}
+                    transition={{
+                        duration: .8,
+                        ease: "easeInOut",
+                        delay: .2
+                    }}
+                >
+                    <GlowButton
+                        bg="#d2002a"
+                        glowColor="rgba(255, 255, 255, 0.26)"
+                        text={t("team.back")}
+                        height="35px"
+                        fontSize="14px"
+                        shadowed={true}
+                        onClick={() => navigate(-1)}
+                    />
+                </motion.span>
+            </motion.div>
+            <div className={styles.column}>
+                <BlockWithBorder width={"100%"}>
+                    <h2 className={styles.title}>{t("team.career")}</h2>
+                </BlockWithBorder>
+                <div className={styles.items}>
+                    <div 
+                        className={styles.vertical} 
+                        style={{
+                            height: `${80 * coach.gameCareer.length + 82.5}px`
+                        }}
+                    >
+                        {Array.from({ length: coach.gameCareer.length }, (_, i) => (
+                            <motion.div
+                                key={`vertical-gameCareer-${i}`}
+                                className={styles.lineItem}
+                                style={{ bottom: `${i * 80}px` }}
+                                initial={{ height: 0 }}
+                                animate={{ height: 40 }}
+                                transition={{
+                                    delay: 0.3 * i,
+                                    duration: 0.4,
+                                    ease: "easeInOut"
+                                }}
+                            />
+                        ))}
+                    </div>
+                    <div className={styles.cup}>
+                        <RotatingObjectCanvas
+                            path="/models/cup.obj"
+                            scale={0.008}
+                            rotation={[0, 0, 0]}
+                            materialProps={{ color: "#fff", metalness: 1.5, roughness: 0.35 }}
+                        />
+                    </div>
+                    {coach.gameCareer.map((c, i) => {
+                        return (
+                            <BlockWithBorder key={`career-${i}`} delay={0.6 * i}>
+                                <p className={styles.item}>{c}</p>
+                            </BlockWithBorder>
+                        )
+                    })}
+                </div>
             </div>
-            <div className={styles.cup}>
-                <RotatingObjectCanvas
-                    path="/models/cup.obj"
-                    scale={0.008}
-                    rotation={[0, 0, 0]}
-                    materialProps={{ color: "#fff", metalness: 1.5, roughness: 0.35 }}
-                />
+            <div className={styles.column}>
+                <BlockWithBorder width={"100%"}>
+                    <h2 className={styles.title}>{t("team.education")}</h2>
+                </BlockWithBorder>
+                <div className={styles.items}>
+                    <div 
+                        className={styles.vertical} 
+                        style={{
+                            height: `${80 * coach.education.length + 82.5}px`
+                        }}
+                    >
+                        {Array.from({ length: coach.education.length }, (_, i) => (
+                            <motion.div
+                                key={`vertical-education-${i}`}
+                                className={styles.lineItem}
+                                style={{ bottom: `${i * 80}px` }}
+                                initial={{ height: 0 }}
+                                animate={{ height: 40 }}
+                                transition={{
+                                    delay: 0.3 * i,
+                                    duration: 0.4,
+                                    ease: "easeInOut"
+                                }}
+                            />
+                        ))}
+                    </div>
+                    <div className={styles.brain}>
+                        <RotatingObjectCanvas
+                            path="/models/brain.obj"
+                            scale={0.12}
+                            floatY
+                            rotation={[-Math.PI / 2, 0, Math.PI / 0.27]}
+                            materialProps={{ color: "#fff", metalness: 1.5, roughness: 0.35 }}
+                        />
+                    </div>
+                    {coach.education.map((c, i) => {
+                        return (
+                            <BlockWithBorder key={`education-${i}`} delay={0.6 * i}>
+                                <p className={styles.item}>{c}</p>
+                            </BlockWithBorder>
+                        )
+                    })}
+                </div>
             </div>
-            <div className={styles.stick}>
-                <RotatingObjectCanvas
-                    path="/models/stick.obj"
-                    scale={0.035}
-                    floatY
-                    rotation={[-Math.PI / 2, 0, Math.PI]}
-                    materialProps={{ color: "#fff", metalness: 1.5, roughness: 0.35 }}
-                />
+            <div className={styles.column}>
+                <BlockWithBorder width={"100%"}>
+                    <h2 className={styles.title}>{t("team.exp")}</h2>
+                </BlockWithBorder>    
+                <div className={styles.items}>
+                    <div 
+                        className={styles.vertical} 
+                        style={{
+                            height: `${80 * coach.exp.length + 82.5}px`
+                        }}
+                    >
+                        {Array.from({ length: coach.exp.length }, (_, i) => (
+                            <motion.div
+                                key={`vertical-exp-${i}`}
+                                className={styles.lineItem}
+                                style={{ bottom: `${i * 80}px` }}
+                                initial={{ height: 0 }}
+                                animate={{ height: 40 }}
+                                transition={{
+                                    delay: 0.3 * i,
+                                    duration: 0.4,
+                                    ease: "easeInOut"
+                                }}
+                            />
+                        ))}
+                    </div>
+                    <div className={styles.stick}>
+                        <RotatingObjectCanvas
+                            path="/models/stick.obj"
+                            scale={0.035}
+                            floatY
+                            rotation={[-Math.PI / 2, 0, Math.PI]}
+                            materialProps={{ color: "#fff", metalness: 1.5, roughness: 0.35 }}
+                        />
+                    </div>
+                    {coach.exp.map((c, i) => {
+                        return (
+                            <BlockWithBorder key={`exp-${i}`} delay={0.6 * i}>
+                                <p className={styles.item}>{c}</p>
+                            </BlockWithBorder>
+                        )
+                    })}
+                </div>
             </div>
         </div>
     );
