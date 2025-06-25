@@ -3,10 +3,11 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
-import Coach from "../3D/Coach";
 import { Languages } from "../Languages/Languages";
 import { GlowButton } from "../UI/GlowButton";
 import { BlockWithBorder } from "../UI/BlockWithBorder";
+import { ModelCanvas } from "../3D/ModelCanvas";
+import { RotatingObjectCanvas } from "../3D/RotatingObjectCanvas";
 
 import styles from "./CoachPage.module.css";
 
@@ -125,7 +126,27 @@ export const CoachPage = () => {
                 </div>
                 <div className={styles.descriptions}>
                     <div className={styles.items}>
-                        <div className={styles.vertical} />
+                        <div 
+                            className={styles.vertical} 
+                            style={{
+                                height: `${80 * coach.gameCareer.length + 82.5}px`
+                            }}
+                        >
+                            {Array.from({ length: coach.gameCareer.length }, (_, i) => (
+                                <motion.div
+                                    key={`vertical-gameCareer-${i}`}
+                                    className={styles.lineItem}
+                                    style={{ bottom: `${i * 80}px` }}
+                                    initial={{ height: 0 }}
+                                    animate={{ height: 40 }}
+                                    transition={{
+                                        delay: 0.3 * i,
+                                        duration: 0.4,
+                                        ease: "easeInOut"
+                                    }}
+                                />
+                            ))}
+                        </div>
                         {coach.gameCareer.map((c, i) => {
                             return (
                                 <BlockWithBorder key={`career-${i}`} delay={0.6 * i}>
@@ -135,7 +156,27 @@ export const CoachPage = () => {
                         })}
                     </div>
                     <div className={styles.items}>
-                        <div className={styles.vertical} />
+                        <div 
+                            className={styles.vertical} 
+                            style={{
+                                height: `${80 * coach.education.length + 82.5}px`
+                            }}
+                        >
+                            {Array.from({ length: coach.education.length }, (_, i) => (
+                                <motion.div
+                                    key={`vertical-education-${i}`}
+                                    className={styles.lineItem}
+                                    style={{ bottom: `${i * 80}px` }}
+                                    initial={{ height: 0 }}
+                                    animate={{ height: 40 }}
+                                    transition={{
+                                        delay: 0.3 * i,
+                                        duration: 0.4,
+                                        ease: "easeInOut"
+                                    }}
+                                />
+                            ))}
+                        </div>
                         {coach.education.map((c, i) => {
                             return (
                                 <BlockWithBorder key={`education-${i}`} delay={0.6 * i}>
@@ -145,7 +186,27 @@ export const CoachPage = () => {
                         })}
                     </div>
                     <div className={styles.items}>
-                        <div className={styles.vertical} />
+                        <div 
+                            className={styles.vertical} 
+                            style={{
+                                height: `${80 * coach.exp.length + 82.5}px`
+                            }}
+                        >
+                            {Array.from({ length: coach.exp.length }, (_, i) => (
+                                <motion.div
+                                    key={`vertical-exp-${i}`}
+                                    className={styles.lineItem}
+                                    style={{ bottom: `${i * 80}px` }}
+                                    initial={{ height: 0 }}
+                                    animate={{ height: 40 }}
+                                    transition={{
+                                        delay: 0.3 * i,
+                                        duration: 0.4,
+                                        ease: "easeInOut"
+                                    }}
+                                />
+                            ))}
+                        </div>
                         {coach.exp.map((c, i) => {
                             return (
                                 <BlockWithBorder key={`exp-${i}`} delay={0.6 * i}>
@@ -156,7 +217,45 @@ export const CoachPage = () => {
                     </div>
                 </div>
             </div>
-            <Coach coachId={id} />
+            <div style={{ 
+                position: "absolute",
+                width: 350, 
+                height: 350,
+                bottom: 0,
+                right: 0
+            }}>
+                <ModelCanvas 
+                    coachId={id} 
+                    scale={0.09}
+                    position={[0, 0, 0]} 
+                />
+            </div>
+            <div className={styles.brain}>
+                <RotatingObjectCanvas
+                    path="/models/brain.obj"
+                    scale={0.12}
+                    floatY
+                    rotation={[-Math.PI / 2, 0, Math.PI / 0.27]}
+                    materialProps={{ color: "#fff", metalness: 1.5, roughness: 0.35 }}
+                />
+            </div>
+            <div className={styles.cup}>
+                <RotatingObjectCanvas
+                    path="/models/cup.obj"
+                    scale={0.008}
+                    rotation={[0, 0, 0]}
+                    materialProps={{ color: "#fff", metalness: 1.5, roughness: 0.35 }}
+                />
+            </div>
+            <div className={styles.stick}>
+                <RotatingObjectCanvas
+                    path="/models/stick.obj"
+                    scale={0.035}
+                    floatY
+                    rotation={[-Math.PI / 2, 0, Math.PI]}
+                    materialProps={{ color: "#fff", metalness: 1.5, roughness: 0.35 }}
+                />
+            </div>
         </div>
     );
 };
