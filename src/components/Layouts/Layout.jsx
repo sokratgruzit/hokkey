@@ -8,7 +8,7 @@ import styles from "./Layout.module.css";
 export const Layout = () => {
     const location = useLocation();
 
-    const hiddenPaths = ["/coaches/zaharov"];
+    const hiddenPaths = ["/coaches/shakarov", "/coaches/matuhov"];
 
     const shouldHideHeaderFooter = hiddenPaths.includes(location.pathname);
 
