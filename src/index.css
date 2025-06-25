@@ -95,6 +95,18 @@ body {
     3px  0px 0 #FFF;  /* Right */
 }
 
+.text-shadow-white-small {
+  text-shadow:
+   -2px -2px 0 #FFF, /* Top-left */
+    2px -2px 0 #FFF, /* Top-right */
+   -23px  2px 0 #FFF, /* Bottom-left */
+    2px  2px 0 #FFF, /* Bottom-right */
+    0px  -2px 0 #FFF, /* Top */
+    0px   2px 0 #FFF, /* Bottom */
+   -2px  0px 0 #FFF,  /* Left */
+    2px  0px 0 #FFF;  /* Right */
+}
+
 @media (max-width: 1024px) {
   .h1 {
     font-size: 3rem !important;

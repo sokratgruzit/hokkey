@@ -119,9 +119,7 @@ export const CoachPage = () => {
                 <p>{coachData.data.position}</p>
                 <p>{coachData.data.hand}</p>
             </div>
-            <div className={styles.modelWrap}>
-                <Coach coachId={id} />
-            </div>
+            <Coach coachId={id} />
         </div>
     );
 };

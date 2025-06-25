@@ -7,7 +7,6 @@ import { countries } from "./constants/countries";
 
 import { About } from "./components/About/About";
 import { Layout } from "./components/Layouts/Layout";
-import { Team } from "./components/Team/Team";
 import { Media } from "./components/Media/Media";
 import { Program } from "./components/Program/Program";
 import { Home } from "./components/Home/Home";
@@ -57,12 +56,8 @@ function App() {
           element={<SignUp />}
         />
         <Route
-          path="team/:id"
+          path="coaches/:id"
           element={<CoachPage />}
-        />
-        <Route
-          path="team"
-          element={<Team />}
         />
         <Route
           path="media"

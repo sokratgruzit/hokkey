@@ -7,7 +7,7 @@ import { Promo } from "./Promo";
 // import { Profits } from "./Profits";
 import { Trainings } from "./Trainings";
 // import { Progress } from "./Progress";
-import { Team } from "./Team";
+import { Coaches } from "./Coaches";
 
 import styles from "./Home.module.css";
 
@@ -23,7 +23,7 @@ export const Home = () => {
             {/* <Profits /> */}
             <Trainings />
             {/* <Progress /> */}
-            <Team />
+            <Coaches />
             <div className={styles.knightBg} />
         </>
     )

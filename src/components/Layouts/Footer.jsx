@@ -42,10 +42,6 @@ export const Footer = () => {
                 <div className={styles.footerSection}>
                     <h2>{t("promo.aboutUs")}</h2>
                     <Link 
-                        to="/team" className={styles.footerLink}
-                        onClick={() => handleActiveTab("team")}
-                    >{t("header.team")}</Link>
-                    <Link 
                         to="/media" className={styles.footerLink}
                         onClick={() => handleActiveTab("media")}
                     >{t("header.media")}</Link>

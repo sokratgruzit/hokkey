@@ -1,5 +1,4 @@
-import { Suspense } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 import { Header } from "./Header";
 import { Footer } from "./Footer";
@@ -7,13 +6,19 @@ import { Footer } from "./Footer";
 import styles from "./Layout.module.css";
 
 export const Layout = () => {
+    const location = useLocation();
+
+    const hiddenPaths = ["/coaches/zaharov"];
+
+    const shouldHideHeaderFooter = hiddenPaths.includes(location.pathname);
+
     return (
         <div className={styles.container}>
-            <Header />
+            {!shouldHideHeaderFooter && <Header />}
             <main className={styles.main}>
                 <Outlet />
             </main>
-            <Footer />
+            {!shouldHideHeaderFooter && <Footer />}
         </div>
-    )
+    );
 };

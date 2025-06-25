@@ -25,6 +25,7 @@
 .headerLink {
     text-decoration: none;
     color: white;
+    transition: .7s;
 }
 
 .logo {
