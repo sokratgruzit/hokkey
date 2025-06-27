@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import { useSelector } from "react-redux";
 
 import { Languages } from "../Languages/Languages";
 import { GlowButton } from "../UI/GlowButton";
@@ -16,6 +17,8 @@ export const CoachPage = () => {
     const { t } = useTranslation("common");
     const navigate = useNavigate();
     const containerRef = useRef();
+
+    const isLoading = useSelector((state) => state.settings.isLoading);
 
     const coaches = {
         shakarov: {
@@ -74,12 +77,47 @@ export const CoachPage = () => {
 
     return (
         <div ref={containerRef} className={styles.container}>
-            <div className={styles.headWrap}>
-                <ModelCanvas 
-                    coachId={id} 
-                    scale={0.09}
-                    position={[0, 0, 0]} 
-                />
+            <div className={styles.headContainer}>
+                <div className={styles.generalDataMobile}>
+                    <div className={styles.dataItem}>
+                        <span>{t("team.lang")}</span> 
+                        <Languages />
+                    </div>
+                    <div className={styles.dataItem}>
+                        <span>{t("team.fullName")}</span> 
+                        <span>{coach.name}</span>
+                    </div>
+                    <div className={styles.dataItem}>
+                        <span>{t("team.expText")}</span> 
+                        <span>{coach.expTime}</span>
+                    </div>
+                    <motion.span
+                        initial={{ translateY: -50, opacity: 0 }}
+                        animate={{ translateY: 0, opacity: 1 }}
+                        transition={{
+                            duration: .8,
+                            ease: "easeInOut",
+                            delay: .2
+                        }}
+                    >
+                        <GlowButton
+                            bg="#d2002a"
+                            glowColor="rgba(255, 255, 255, 0.26)"
+                            text={t("team.back")}
+                            height="35px"
+                            fontSize="14px"
+                            shadowed={true}
+                            onClick={() => navigate(-1)}
+                        />
+                    </motion.span>
+                </div>
+                <div className={styles.headWrap}>
+                    <ModelCanvas 
+                        coachId={id} 
+                        scale={0.09}
+                        position={[0, 0, 0]} 
+                    />
+                </div>
             </div>
             <motion.div 
                 className={styles.generalData}
@@ -120,11 +158,11 @@ export const CoachPage = () => {
                 </motion.span>
             </motion.div>
             <div className={styles.column}>
-                <BlockWithBorder width={"100%"}>
+                {!isLoading && <BlockWithBorder width={"100%"}>
                     <h2 className={styles.title}>{t("team.career")}</h2>
-                </BlockWithBorder>
+                </BlockWithBorder>}
                 <div className={styles.items}>
-                    <div 
+                    {!isLoading && <div 
                         className={styles.vertical} 
                         style={{
                             height: `${80 * coach.gameCareer.length + 82.5}px`
@@ -144,7 +182,7 @@ export const CoachPage = () => {
                                 }}
                             />
                         ))}
-                    </div>
+                    </div>}
                     <div className={styles.cup}>
                         <RotatingObjectCanvas
                             path="/models/cup.obj"
@@ -153,7 +191,7 @@ export const CoachPage = () => {
                             materialProps={{ color: "#fff", metalness: 1.5, roughness: 0.35 }}
                         />
                     </div>
-                    {coach.gameCareer.map((c, i) => {
+                    {!isLoading && coach.gameCareer.map((c, i) => {
                         return (
                             <BlockWithBorder key={`career-${i}`} delay={0.6 * i}>
                                 <p className={styles.item}>{c}</p>
@@ -163,11 +201,11 @@ export const CoachPage = () => {
                 </div>
             </div>
             <div className={styles.column}>
-                <BlockWithBorder width={"100%"}>
+                {!isLoading && <BlockWithBorder delayBeforeStart={1} width={"100%"}>
                     <h2 className={styles.title}>{t("team.education")}</h2>
-                </BlockWithBorder>
+                </BlockWithBorder>}
                 <div className={styles.items}>
-                    <div 
+                    {!isLoading && <div 
                         className={styles.vertical} 
                         style={{
                             height: `${80 * coach.education.length + 82.5}px`
@@ -187,7 +225,7 @@ export const CoachPage = () => {
                                 }}
                             />
                         ))}
-                    </div>
+                    </div>}
                     <div className={styles.brain}>
                         <RotatingObjectCanvas
                             path="/models/brain.obj"
@@ -197,7 +235,7 @@ export const CoachPage = () => {
                             materialProps={{ color: "#fff", metalness: 1.5, roughness: 0.35 }}
                         />
                     </div>
-                    {coach.education.map((c, i) => {
+                    {!isLoading && coach.education.map((c, i) => {
                         return (
                             <BlockWithBorder key={`education-${i}`} delay={0.6 * i}>
                                 <p className={styles.item}>{c}</p>
@@ -207,11 +245,11 @@ export const CoachPage = () => {
                 </div>
             </div>
             <div className={styles.column}>
-                <BlockWithBorder width={"100%"}>
+                {!isLoading && <BlockWithBorder delayBeforeStart={2} width={"100%"}>
                     <h2 className={styles.title}>{t("team.exp")}</h2>
-                </BlockWithBorder>    
+                </BlockWithBorder>}    
                 <div className={styles.items}>
-                    <div 
+                    {!isLoading && <div 
                         className={styles.vertical} 
                         style={{
                             height: `${80 * coach.exp.length + 82.5}px`
@@ -231,7 +269,7 @@ export const CoachPage = () => {
                                 }}
                             />
                         ))}
-                    </div>
+                    </div>}
                     <div className={styles.stick}>
                         <RotatingObjectCanvas
                             path="/models/stick.obj"
@@ -241,7 +279,7 @@ export const CoachPage = () => {
                             materialProps={{ color: "#fff", metalness: 1.5, roughness: 0.35 }}
                         />
                     </div>
-                    {coach.exp.map((c, i) => {
+                    {!isLoading && coach.exp.map((c, i) => {
                         return (
                             <BlockWithBorder key={`exp-${i}`} delay={0.6 * i}>
                                 <p className={styles.item}>{c}</p>

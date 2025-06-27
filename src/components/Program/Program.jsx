@@ -1,11 +1,175 @@
 import { useTranslation } from "react-i18next";
+import { useEffect, useMemo, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+
+import { BlockWithBorder } from "../UI/BlockWithBorder";
+import { useWindowWidth } from "../../hooks/UseWindowWidth";
 
 import styles from "./Program.module.css";
 
 export const Program = () => {
+    const [start, setStart] = useState(false);
+    const [start2, setStart2] = useState(false);
+    
+    const width = useWindowWidth();
+    const coef = width >= 768 ? 16 :  width >= 440 ? 10 : 6;
+    const pad = width >= 768 ? 20 : 10;
+
     const { t } = useTranslation("common");
+    const lineControls = useAnimation();
+
+    const dirs = t("program.directions");
+    const pro = t("program.pro");
+    const hobby = t("program.hobby");
+    const hobby1 = t("program.hobby1");
+    const weOffer = t("program.weOffer");
+    const fromZero = t("program.fromZero");
+    const helping = t("program.helping");
+    const study = t("program.study");
+    const matches = t("program.matches");
+
+    const dirW = useMemo(() => dirs.length * coef + pad, [dirs, coef]);
+    const offerW = useMemo(() => weOffer.length * coef + pad, [dirs, coef]);
+    const hobbyW = useMemo(() => {
+        const maxLen = Math.max(hobby.length, pro.length);
+        return maxLen * coef + pad;
+    }, [hobby, pro, coef]);
+
+    useEffect(() => {
+        if (start) {
+            lineControls.start({
+                scaleY: 1,
+                transition: {
+                    duration: .7,
+                    ease: "easeInOut",
+                    delay: .7
+                }
+            });
+        }
+    }, [start]);
 
     return (
-        <div className={styles.container}>{t("header.about")}</div>
-    )
+        <div className={styles.container}>
+            <div className={styles.section}>
+                <div className={styles.subSection}>
+                    <BlockWithBorder onBorderAnimationEnd={() => setStart(true)} bg="#d2002a" h={45} width={dirW}>
+                        <p className={styles.text}>{dirs}</p>
+                    </BlockWithBorder>
+                </div>
+                <div className={styles.subSection}>
+                    {start && <motion.div 
+                        className={styles.line}
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{
+                            duration: .7,
+                            ease: "easeInOut",
+                        }}
+                    >
+                        <motion.div 
+                            className={styles.line2} 
+                            initial={{ scaleY: 0 }}
+                            animate={lineControls}
+                        />
+                        <motion.div 
+                            className={styles.line3} 
+                            initial={{ scaleY: 0 }}
+                            animate={lineControls}
+                        />
+                        <motion.div 
+                            className={styles.line4} 
+                            initial={{ scaleY: 0 }}
+                            animate={lineControls}
+                        />
+                    </motion.div>}
+                    <div className={styles.subList}>
+                        <motion.div 
+                            className={styles.line5}
+                            initial={{ scaleY: 0 }}
+                            animate={{ scaleY: 1 }}
+                            transition={{
+                                duration: .7,
+                                ease: "easeInOut",
+                                delay: 5.5
+                            }} 
+                        />
+                        <BlockWithBorder delayBeforeStart={3.5} bg="#d2002a" h={45} width={hobbyW}>
+                            <p className={styles.text}>{hobby}</p>
+                        </BlockWithBorder>
+                        <BlockWithBorder delayBeforeStart={6} bg="#d2002a" width={hobbyW}>
+                            <p className={styles.text2}>{hobby1}</p>
+                        </BlockWithBorder>
+                    </div>
+                    <BlockWithBorder delayBeforeStart={3.5} bg="#d2002a" h={45} width={hobbyW}>
+                        <p className={styles.text}>{pro}</p>
+                    </BlockWithBorder>
+                </div>
+            </div>
+            <div style={{ background: "#000", gap: 40 }} className={styles.section}>
+                {start2 && <motion.div 
+                    className={styles.line6}
+                    initial={{ scaleY: 0 }}
+                    animate={{ scaleY: 1 }}
+                    transition={{
+                        duration: 1,
+                        ease: "easeInOut"
+                    }}
+                >
+                    <motion.div 
+                        className={styles.line8} 
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{
+                            duration: .7,
+                            ease: "easeInOut",
+                            delay: 1
+                        }}
+                    />
+                </motion.div>}
+                <motion.div 
+                    className={styles.line7} 
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{
+                        duration: .7,
+                        ease: "easeInOut",
+                        delay: 2.5
+                    }}
+                />
+                <div className={styles.subSection}>
+                    <BlockWithBorder onBorderAnimationEnd={() => setStart2(true)} h={45} width={offerW}>
+                        <p className={styles.text}>{weOffer}</p>
+                    </BlockWithBorder>
+                </div>
+                <div style={{ gap: 60 }} className={styles.subSection}>
+                    <BlockWithBorder delayBeforeStart={3} width={hobbyW}>
+                        <p 
+                            className={styles.text2}
+                            dangerouslySetInnerHTML={{ __html: fromZero }}
+                        />
+                    </BlockWithBorder>
+                    <BlockWithBorder delayBeforeStart={3} width={hobbyW}>
+                        <p 
+                            className={styles.text2}
+                            dangerouslySetInnerHTML={{ __html: helping }}
+                        />
+                    </BlockWithBorder>
+                </div>
+                <div style={{ gap: 60 }} className={styles.subSection}>
+                    <BlockWithBorder delayBeforeStart={3} width={hobbyW}>
+                        <p 
+                            className={styles.text2}
+                            dangerouslySetInnerHTML={{ __html: study }}
+                        />
+                    </BlockWithBorder>
+                    <BlockWithBorder delayBeforeStart={3} width={hobbyW}>
+                        <p 
+                            className={styles.text2}
+                            dangerouslySetInnerHTML={{ __html: matches }}
+                        />
+                    </BlockWithBorder>
+                </div>
+            </div>
+        </div>
+    );
 };

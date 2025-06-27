@@ -10,6 +10,14 @@ export const Trainings = () => {
     const ref = useRef(null);
     const isVisible = useIsVisible(ref);
 
+    const [play, setPlay] = useState(false);
+
+    useEffect(() => {
+        if (isVisible && !play) setPlay(true);
+    }, [isVisible]);
+
+    const title = t("trainings.title");
+
     const trainingsData = [
         { title: t("trainings.title1"), text: t("trainings.text1") },
         { title: t("trainings.title2"), text: t("trainings.text2") },
@@ -19,22 +27,22 @@ export const Trainings = () => {
 
     return (
         <div ref={ref} className={styles.trainingsContainer}>
-            {isVisible && <motion.div
+            {play && <motion.div
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{
-                    duration: 0.5,
+                    duration: 1,
                     ease: "easeInOut",
-                    delay: .5
                 }}
                 className={`${styles.itemContent2} ${styles.shadow}`}
+                style={{ willChange: "transform, opacity" }}
             >
                 <h2 className={styles.trainingsTitle2}>
-                    {t("trainings.title")}
+                    {title}
                 </h2>
                 <img src="/appIcons/red-knights.svg" alt="Knight" />
             </motion.div>}
-            {isVisible && <div className={styles.items}>
+            {play && <div className={styles.items}>
                 {trainingsData.map((item, i) => {
                     return (
                         <div key={`trainins-${i}`} className={styles.item}>
@@ -43,7 +51,7 @@ export const Trainings = () => {
                                 initial={{ y: 100, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{
-                                    duration: 0.5,
+                                    duration: 1,
                                     ease: "easeInOut",
                                     delay: i * 0.05 + .5
                                 }}
@@ -51,7 +59,8 @@ export const Trainings = () => {
                                 style={{
                                     background: "#FFF",
                                     zIndex: trainingsData.length - i,
-                                    border: "2px solid #768aa1"
+                                    border: "2px solid #768aa1",
+                                    willChange: "transform, opacity"
                                 }}
                             >
                                 <h2 className={styles.trainingsTitle}>

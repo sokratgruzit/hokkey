@@ -13,7 +13,7 @@ export const News = () => {
     const [play, setPlay] = useState(false);
 
     useEffect(() => {
-        if (isVisible) setPlay(true);
+        if (isVisible && !play) setPlay(true);
     }, [isVisible]);
 
     const newsData = [

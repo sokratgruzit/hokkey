@@ -7,7 +7,8 @@ const INIT_STATE = {
     langFull: "Русский"
   },
   languageModal: false,
-  activeTab: ""
+  activeTab: "",
+  isLoading: false
 };
 
 const settingsReducer = (state = INIT_STATE, action) => {
@@ -22,6 +23,12 @@ const settingsReducer = (state = INIT_STATE, action) => {
       return {
         ...state,
         languageModal: action.payload,
+      };
+
+    case "SET_LOADING":
+      return {
+        ...state,
+        isLoading: action.payload,
       };
 
     case "SET_ACITVE_TAB":

@@ -12,8 +12,13 @@ export const About = () => {
 
     const [play, setPlay] = useState(false);
 
+    const title = t("promo.aboutUs");
+    const text1 = t("promo.aboutDescr");
+    const text2 = t("promo.listItem1");
+    const text3 = t("promo.listItem2");
+
     useEffect(() => {
-        if (isVisible) setPlay(true);
+        if (isVisible && !play) setPlay(true);
     }, [isVisible]);
 
     return (
@@ -22,22 +27,23 @@ export const About = () => {
                 initial={{ translateY: -50, opacity: 0 }}
                 animate={{ translateY: 0, opacity: 1 }}
                 transition={{
-                    duration: .8,
+                    duration: 1,
                     ease: "easeInOut"
                 }}
                 className="h1 text-shadow"
-                style={{ color: "white", width: "100%", textAlign: "start" }}
-            >{t("promo.aboutUs")}</motion.h2>}
+                style={{ color: "white", width: "100%", textAlign: "start", willChange: "transform, opacity" }}
+            >{title}</motion.h2>}
             <div className={styles.sectionsWrap}>
                 <div className={styles.section}>
                     {play && <motion.div 
                         className={styles.player}
                         initial={{ translateY: -50, opacity: 0 }}
                         animate={{ translateY: 0, opacity: 1 }}
+                        style={{ willChange: "transform, opacity" }}
                         transition={{
-                            duration: .8,
+                            duration: 1,
                             ease: "easeInOut",
-                            delay: .1
+                            delay: .3
                         }}
                     >
                         <div className={styles.aboutImage} />
@@ -48,39 +54,45 @@ export const About = () => {
                         className={styles.sectionTitle}
                         initial={{ translateY: -50, opacity: 0 }}
                         animate={{ translateY: 0, opacity: 1 }}
+                        style={{ willChange: "transform, opacity" }}
                         transition={{
-                            duration: .8,
-                            ease: "easeInOut"
+                            duration: 1,
+                            ease: "easeInOut",
+                            delay: .5
                         }}
                     >
                         <span className={styles.titleContent}>
-                            {t("promo.aboutDescr")}
+                            {text1}
                         </span>
                     </motion.p>}
                     {play && <motion.p 
                         className={styles.sectionTitle}
                         initial={{ translateY: -50, opacity: 0 }}
                         animate={{ translateY: 0, opacity: 1 }}
+                        style={{ willChange: "transform, opacity" }}
                         transition={{
-                            duration: .8,
-                            ease: "easeInOut"
+                            duration: 1,
+                            ease: "easeInOut",
+                            delay: .7
                         }}
                     >
                         <span className={styles.titleContent}>
-                            {t("promo.listItem1")}
+                            {text2}
                         </span>
                     </motion.p>}
                     {play && <motion.p 
                         className={styles.sectionTitle}
                         initial={{ translateY: -50, opacity: 0 }}
                         animate={{ translateY: 0, opacity: 1 }}
+                        style={{ willChange: "transform, opacity" }}
                         transition={{
-                            duration: .8,
-                            ease: "easeInOut"
+                            duration: 1,
+                            ease: "easeInOut",
+                            delay: .9
                         }}
                     >
                         <span className={styles.titleContent}>
-                            {t("promo.listItem2")}
+                            {text3}
                         </span>
                     </motion.p>}
                     {/* {play && <motion.div 
