@@ -1,9 +1,25 @@
 import { Canvas, useLoader, useFrame } from "@react-three/fiber";
+import { useProgress } from "@react-three/drei";
 import { OBJLoader } from "three-stdlib";
 import * as THREE from "three";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, Suspense } from "react";
+import { useDispatch } from "react-redux";
 
 import styles from "./Coach.module.css";
+
+function LoaderSyncToRedux() {
+  const { active } = useProgress();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({
+        type: "SET_LOADING",
+        payload: active
+    });
+  }, [active]);
+
+  return null;
+}
 
 function RotatingObj({ path, floatY, rotation, materialProps = {}, scale }) {
     const ref = useRef();
@@ -45,6 +61,7 @@ export function RotatingObjectCanvas({ path, floatY = false, rotation = [0, 0, 0
             camera={{ position: [0, 2, 3] }} 
             className={styles.canvas}
         >
+            <LoaderSyncToRedux />
             <ambientLight intensity={0.2} />
             <directionalLight
                 position={[500, 200, 50]}
@@ -53,13 +70,15 @@ export function RotatingObjectCanvas({ path, floatY = false, rotation = [0, 0, 0
                 shadow-mapSize-width={1024}
                 shadow-mapSize-height={1024}
             />
-            <RotatingObj
-                path={path}
-                floatY={floatY}
-                rotation={rotation}
-                materialProps={materialProps}
-                scale={scale}
-            />
+            <Suspense fallback={null}>
+                <RotatingObj
+                    path={path}
+                    floatY={floatY}
+                    rotation={rotation}
+                    materialProps={materialProps}
+                    scale={scale}
+                />
+            </Suspense>
         </Canvas>
     );
 }

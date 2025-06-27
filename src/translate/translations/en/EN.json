@@ -168,6 +168,17 @@
     "1": "Specialty: physical culture and sport",
     "2": "1988-1993",
     "3": "Assigned qualification: Ice hockey teacher-coach"
+  },
+  "program": {
+    "directions": "Directions of development",
+    "hobby": "Amateur hockey",
+    "pro": "Children's hockey",
+    "hobby1": "This is a great option for those who want to learn how to skate, master basic hockey skills, improve their health and get a lot of positive emotions from playing in a team. The amateur team participates in the championship",
+    "weOffer": "What we offer",
+    "fromZero": "<span>Training from scratch:</span> even if your child has never skated, our coaches will help him master the basics of hockey.",
+    "helping": "<span>Developmental training:</span> our training is aimed at developing all the necessary qualities of a hockey player: strength, agility, endurance, coordination and reaction speed.",
+    "study": "<span>In-depth study of technique and tactics:</span> we teach modern stick and puck handling techniques, as well as effective tactical game plans.",
+    "matches": "<span>Participation in friendly matches and tournaments:</span> our students regularly take part in friendly matches and tournaments, which allows them to apply the knowledge they have acquired in practice."
   }
 }
 

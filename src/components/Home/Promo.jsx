@@ -14,6 +14,10 @@ export const Promo = () => {
     const isVisible = useIsVisible(ref);
     const navigate = useNavigate();
 
+    const title = t("promo.title");
+    const subTitle = t("promo.subTitle");
+    const joinUs = t("promo.joinUs");
+
     const [play, setPlay] = useState(false);
 
     const handleSignUp = () => {
@@ -21,7 +25,7 @@ export const Promo = () => {
     };
 
     useEffect(() => {
-        if (isVisible) setPlay(true);
+        if (isVisible && !play) setPlay(true);
     }, [isVisible]);
 
     return (
@@ -31,36 +35,37 @@ export const Promo = () => {
                 initial={{ translateY: -50, opacity: 0 }}
                 animate={{ translateY: 0, opacity: 1 }}
                 transition={{
-                    duration: .8,
+                    duration: 1,
                     ease: "easeInOut"
                 }}
-                style={{ textAlign: "center" }}
+                style={{ textAlign: "center", willChange: "transform, opacity" }}
                 className="h1 text-shadow"
-            >{t("promo.title")}</motion.h1>}
+            >{title}</motion.h1>}
             {play && <motion.h2
                 initial={{ translateY: -50, opacity: 0 }}
                 animate={{ translateY: 0, opacity: 1 }}
                 transition={{
-                    duration: .8,
+                    duration: 1,
                     ease: "easeInOut",
-                    delay: .1
+                    delay: .3
                 }}
-                style={{ width: "70%", textAlign: "center" }}
+                style={{ width: "70%", textAlign: "center", willChange: "transform, opacity" }}
                 className="text-shadow"
-            >{t("promo.subTitle")}</motion.h2>}
+            >{subTitle}</motion.h2>}
             {play && <motion.span
+                style={{ willChange: "transform, opacity" }}
                 initial={{ translateY: -50, opacity: 0 }}
                 animate={{ translateY: 0, opacity: 1 }}
                 transition={{
-                    duration: .8,
+                    duration: 1,
                     ease: "easeInOut",
-                    delay: .2
+                    delay: .5
                 }}
             >
                 <GlowButton
                     bg="#d2002a"
                     glowColor="rgba(255, 255, 255, 0.26)"
-                    text={t("promo.joinUs")}
+                    text={joinUs}
                     height="35px"
                     fontSize="18px"
                     shadowed={true}

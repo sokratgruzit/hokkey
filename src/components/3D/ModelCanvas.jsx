@@ -1,9 +1,25 @@
 import { Canvas, useLoader, useFrame } from "@react-three/fiber";
+import { useProgress } from "@react-three/drei";
 import { FBXLoader } from "three-stdlib";
 import * as THREE from "three";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, Suspense } from "react";
+import { useDispatch } from "react-redux";
 
 import styles from "./Coach.module.css";
+
+function LoaderSyncToRedux() {
+  const { active } = useProgress();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({
+        type: "SET_LOADING",
+        payload: active
+    });
+  }, [active]);
+
+  return null;
+}
 
 function CoachModel({ coachId, scale, position }) {
     const ref = useRef();
@@ -43,7 +59,9 @@ export function ModelCanvas({ coachId, scale = 0.008, position }) {
                 shadow-mapSize-width={1024}
                 shadow-mapSize-height={1024}
             />
-            <CoachModel coachId={coachId} scale={scale} position={position} />
+            <Suspense fallback={null}>
+                <CoachModel coachId={coachId} scale={scale} position={position} />
+            </Suspense>
         </Canvas>
     );
 }

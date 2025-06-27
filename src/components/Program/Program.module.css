@@ -1,0 +1,165 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+.text {
+    font-size: 1.5rem;
+    color: white;
+    padding: 5px 10px;
+}
+
+.text2 {
+    font-size: .7rem;
+    color: white;
+    padding: 5px 10px;
+    word-break: break-all;
+}
+
+.section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+}
+
+.subSection {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    min-width: 300px;
+    justify-content: center;
+}
+
+.subList {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+}
+
+.text2 span {
+    color: rgba(210, 0, 42, 1);
+}
+
+/* 1 section */
+.line {
+    position: absolute;
+    height: 1px;
+    width: 50%;
+    border-top: 2px solid white;
+    top: -29.5px;
+    left: 25%;
+    will-change: transform, scaleX;
+}
+
+.line2 {
+    position: absolute;
+    height: 30px;
+    width: 1px;
+    border-right: 2px solid white;
+    top: 0;
+    left: 0;
+    transform-origin: top;
+    will-change: transform, scaleY;
+}
+
+.line3 {
+    position: absolute;
+    height: 30px;
+    width: 1px;
+    border-right: 2px solid white;
+    top: 0;
+    right: 0;
+    transform-origin: top;
+    will-change: transform, scaleY;
+}
+
+.line4 {
+    position: absolute;
+    height: 33px;
+    width: 1px;
+    border-right: 2px solid white;
+    top: -33px;
+    right: 50%;
+    transform-origin: bottom;
+    will-change: transform, scaleY;
+}
+
+.line5 {
+    position: absolute;
+    height: 47px;
+    width: 1px;
+    border-right: 2px solid white;
+    top: 40px;
+    left: calc(50% + 7px);
+    will-change: transform, scaleY;
+    transform-origin: top;
+}
+/* 1 section end */
+
+/* 2 section */
+.line6 {
+    position: absolute;
+    height: calc(100% - 100px);
+    width: 1px;
+    border-right: 2px solid white;
+    top: 40px;
+    left: 50%;
+    will-change: transform, scaleY;
+    transform-origin: top;
+}
+
+.line7 {
+    position: absolute;
+    height: 1px;
+    width: 70px;
+    border-bottom: 2px solid white;
+    top: 46%;
+    left: calc(50% - 35px);
+    will-change: transform, scaleX;
+}
+
+.line8 {
+    position: absolute;
+    height: 1px;
+    width: 70px;
+    border-bottom: 2px solid white;
+    bottom: 0;
+    left: calc(50% - 35px);
+    will-change: transform, scaleX;
+}
+/* 2 section end */
+
+@media screen and (max-width: 768px) {
+    .text {
+        font-size: 1rem;
+        padding: 5px;
+    }
+
+    .text2 {
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .text {
+        font-size: .7rem;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .text2 {
+        padding: 5px;
+        font-size: .6rem;
+    }
+}
