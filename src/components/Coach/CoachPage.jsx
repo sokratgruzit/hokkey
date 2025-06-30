@@ -61,17 +61,17 @@ export const CoachPage = () => {
                 t("careerMatuhov.5"),
             ],
             exp: [
-                t("careerMatuhov.0"),
-                t("careerMatuhov.1"),
-                t("careerMatuhov.2"),
-                t("careerMatuhov.3"),
-                t("careerMatuhov.4"),
+                t("expMatuhov.0"),
+                t("expMatuhov.1"),
+                t("expMatuhov.2"),
+                t("expMatuhov.3"),
+                t("expMatuhov.4"),
             ],
             education: [
-                t("careerMatuhov.0"),
-                t("careerMatuhov.1"),
-                t("careerMatuhov.2"),
-                t("careerMatuhov.3"),
+                t("educationMatuhov.0"),
+                t("educationMatuhov.1"),
+                t("educationMatuhov.2"),
+                t("educationMatuhov.3"),
             ]
         }
     };

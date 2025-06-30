@@ -13,6 +13,7 @@ export const BlockWithBorder = ({
     align = "center",
     onBorderAnimationEnd = () => {}
 }) => {
+    const [background, setBackground] = useState("transparent");
     const [showContent, setShowContent] = useState(false);
     const [startAnimation, setStartAnimation] = useState(false);
     const [size, setSize] = useState({ width: 0, height: 0 });
@@ -41,6 +42,7 @@ export const BlockWithBorder = ({
     useEffect(() => {
         const timeout = setTimeout(() => {
             setStartAnimation(true);
+            setBackground(bg);
         }, delayBeforeStart * 1000);
 
         return () => clearTimeout(timeout);
@@ -72,7 +74,7 @@ export const BlockWithBorder = ({
         <div
             ref={wrapperRef}
             className={styles.blockWrapper}
-            style={{ height: h, width: safeWidth, background: bg, justifyContent: align }}
+            style={{ height: h, width: safeWidth, background, justifyContent: align }}
         >
             <svg className={styles.borderSvg}>
                 {startAnimation && size.width > 2 && size.height > 2 && (

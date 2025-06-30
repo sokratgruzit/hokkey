@@ -78,30 +78,32 @@ export const Header = () => {
                     }}
                 />
             </Link>
-            <Link 
-                to="/about" 
-                className={`${styles.headerLink} ${activeTab === "about" ? "text-shadow-small" : null}`}
-                onClick={() => handleActiveTab("about")}
-                style={{
-                    color: activeTab === "about" ? "#c00" : "#fff"
-                }}
-            >{t("header.about")}</Link>
-            {/* <Link 
-                to="/media" 
-                className={`${styles.headerLink} ${activeTab === "media" ? "text-shadow-small" : null}`}
-                onClick={() => handleActiveTab("media")}
-                style={{
-                    color: activeTab === "media" ? "#c00" : "#fff"
-                }}
-            >{t("header.media")}</Link> */}
-            <Link 
-                to="/program" 
-                className={`${styles.headerLink} ${activeTab === "program" ? "text-shadow-small" : null}`}
-                onClick={() => handleActiveTab("program")}
-                style={{
-                    color: activeTab === "program" ? "#c00" : "#fff"
-                }}
-            >{t("header.program")}</Link>
+            <div className={styles.linkWrap}>
+                <Link 
+                    to="/about" 
+                    className={`${styles.headerLink} ${activeTab === "about" ? "text-shadow-small" : null}`}
+                    onClick={() => handleActiveTab("about")}
+                    style={{
+                        color: activeTab === "about" ? "#c00" : "#fff"
+                    }}
+                >{t("header.about")}</Link>
+                {/* <Link 
+                    to="/media" 
+                    className={`${styles.headerLink} ${activeTab === "media" ? "text-shadow-small" : null}`}
+                    onClick={() => handleActiveTab("media")}
+                    style={{
+                        color: activeTab === "media" ? "#c00" : "#fff"
+                    }}
+                >{t("header.media")}</Link> */}
+                <Link 
+                    to="/program" 
+                    className={`${styles.headerLink} ${activeTab === "program" ? "text-shadow-small" : null}`}
+                    onClick={() => handleActiveTab("program")}
+                    style={{
+                        color: activeTab === "program" ? "#c00" : "#fff"
+                    }}
+                >{t("header.program")}</Link>
+            </div>
             <Languages />
         </div>
     )
