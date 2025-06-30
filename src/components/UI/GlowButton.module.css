@@ -22,7 +22,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
     border: 1px solid #000000;
     padding: 10px;
 }
@@ -54,7 +53,6 @@
     position: absolute;
     left: 2px;
     top: 2px;
-    border-radius: 5px;
 }
 
 .whiteSpace {

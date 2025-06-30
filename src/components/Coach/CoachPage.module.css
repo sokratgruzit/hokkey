@@ -9,6 +9,7 @@
   gap: 20px;
   padding: 20px;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .column {
@@ -54,6 +55,7 @@
   gap: 20px;
   padding: 10px;
   background: rgba(0,0,0,.85);
+  will-change: opactiy;
 }
 
 .generalDataMobile {
@@ -83,6 +85,8 @@
   top: -140px;
   left: 40px;
   border-right: 2px solid white;
+  will-change: transform, scaleY;
+  transform-origin: top;
 }
 
 .brain {
@@ -115,6 +119,8 @@
   border-bottom: 2px solid white;
   position: absolute;
   left: 0;
+  will-change: transform, scaleX;
+  transform-origin: left;
 }
 
 .headWrap {
@@ -125,12 +131,25 @@
   right: 0px;
 }
 
+.headWrap2 {
+  position: absolute;
+  width: 300px; 
+  height: 300px;
+  bottom: 0px;
+  right: 0px;
+  display: block;
+  z-index: 10000;
+  background: black;
+  border: 2px solid #c00;
+}
+
 .headContainer {
   width: 100%;
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  gap: 20px;
 }
 
 @media (max-width: 768px) {
@@ -138,10 +157,18 @@
     width: 100%;
   }
 
+  .headContainer {
+    display: flex;
+  }
+
   .headWrap {
     position: relative;
     margin: auto;
     width: 100%;
+  }
+
+  .headWrap2 {
+    display: none;
   }
 
   .generalData {

@@ -21,6 +21,13 @@
     word-break: break-all;
 }
 
+.text3 {
+    font-size: 1rem;
+    color: white;
+    padding: 5px 10px;
+    word-break: break-all;
+}
+
 .section {
     position: relative;
     display: flex;
@@ -39,6 +46,13 @@
     justify-content: center;
 }
 
+.subSection2 {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
 .subList {
     position: relative;
     display: flex;
@@ -49,6 +63,10 @@
 
 .text2 span {
     color: rgba(210, 0, 42, 1);
+}
+
+.text2 strong {
+    color: #000;
 }
 
 /* 1 section */
@@ -140,6 +158,96 @@
 }
 /* 2 section end */
 
+/* 3 section */
+.line10 {
+    position: absolute;
+    height: calc(100% + 30px);
+    width: 1px;
+    border-left: 2px solid white;
+    top: -60px;
+    left: -30px;
+    will-change: transform, scaleY;
+    transform-origin: top;
+}
+
+.line11 {
+    position: absolute;
+    height: 1px;
+    width: 40px;
+    border-bottom: 2px solid white;
+    bottom: 0;
+    left: 0px;
+    will-change: transform, scaleX;
+    transform-origin: left;
+}
+
+.line12 {
+    position: absolute;
+    height: 1px;
+    width: 70px;
+    border-bottom: 2px solid white;
+    top: calc(50% + 45px);
+    left: -32px;
+    will-change: transform, scaleX;
+    transform-origin: left;
+}
+
+.line13 {
+    position: absolute;
+    height: 1px;
+    width: 40px;
+    border-bottom: 2px solid white;
+    top: 85px;
+    left: 0px;
+    will-change: transform, scaleX;
+    transform-origin: left;
+}
+
+.line14 {
+    position: absolute;
+    height: calc(100% + 60px);
+    width: 1px;
+    border-left: 2px solid white;
+    top: -90px;
+    left: -30px;
+    will-change: transform, scaleY;
+    transform-origin: top;
+}
+
+.line15 {
+    position: absolute;
+    height: 1px;
+    width: 40px;
+    border-bottom: 2px solid white;
+    bottom: 0;
+    left: 0px;
+    will-change: transform, scaleX;
+    transform-origin: left;
+}
+
+.line16 {
+    position: absolute;
+    height: 1px;
+    width: 70px;
+    border-bottom: 2px solid white;
+    top: calc(50% + 60px);
+    left: -32px;
+    will-change: transform, scaleX;
+    transform-origin: left;
+}
+
+.line17 {
+    position: absolute;
+    height: 1px;
+    width: 40px;
+    border-bottom: 2px solid white;
+    top: 115px;
+    left: 0px;
+    will-change: transform, scaleX;
+    transform-origin: left;
+}
+/* 3 section end */
+
 @media screen and (max-width: 768px) {
     .text {
         font-size: 1rem;
@@ -151,8 +259,9 @@
     }
 }
 
-@media screen and (max-width: 440px) {
-    .text {
+@media screen and (max-width: 550px) {
+    .text,
+    .text3 {
         font-size: .7rem;
         padding: 5px;
         text-align: center;

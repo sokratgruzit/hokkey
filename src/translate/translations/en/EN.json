@@ -39,6 +39,7 @@
     "success": "Application sent successfully!"
   },
   "promo": {
+    "details": "Details",
     "newsTitle": "Праздничный турнир отцы-дети.",
     "newsText": "23 февраля состоялся традиционный ежегодный турнир 'отцы-дети'. Поздравляем младший состав с победой!",
     "news": "News",
@@ -178,7 +179,16 @@
     "fromZero": "<span>Training from scratch:</span> even if your child has never skated, our coaches will help him master the basics of hockey.",
     "helping": "<span>Developmental training:</span> our training is aimed at developing all the necessary qualities of a hockey player: strength, agility, endurance, coordination and reaction speed.",
     "study": "<span>In-depth study of technique and tactics:</span> we teach modern stick and puck handling techniques, as well as effective tactical game plans.",
-    "matches": "<span>Participation in friendly matches and tournaments:</span> our students regularly take part in friendly matches and tournaments, which allows them to apply the knowledge they have acquired in practice."
+    "matches": "<span>Participation in friendly matches and tournaments:</span> our students regularly take part in friendly matches and tournaments, which allows them to apply the knowledge they have acquired in practice.",
+    "stages": "Stages of sports improvement",
+    "stage1Title": "Initial training stage",
+    "stage1": "<strong>Goal:</strong> attracting children to hockey, forming an interest in this sport, strengthening health and comprehensive physical development.",
+    "stage12": "<strong>Tasks:</strong> <br> - Teaching the basic elements of skating technique, stick and puck handling. <br> - Developing coordination skills, agility, flexibility and speed. <br> - Forming correct posture and preventing flat feet. <br> - Teaching the basic rules of playing hockey.",
+    "stage13": "<strong>Features:</strong> <br> - Predominance of game-based training. <br> - Small volume of training loads. <br> - Versatile physical training. <br> - Teaching basic motor skills.",
+    "stage2Title": "Training Stage",
+    "stage2": "<strong>Goal:</strong> in-depth study of hockey technique and tactics, development of physical qualities and preparation for participation in competitions.",
+    "stage22": "<strong>Tasks:</strong> <br> - Improving skating techniques, stick and puck handling. <br> - Developing speed-strength qualities, endurance and agility. <br> - Studying tactical combinations and team interactions. <br> - Preparing for participation in competitions of various levels.",
+    "stage23": "<strong>Features:</strong> <br> - Increase in the volume and intensity of training loads. <br> - Specialization of the training process. <br> - Gradual increase in the number of competitions. <br> - Increased demands on discipline and self-control."
   }
 }
 

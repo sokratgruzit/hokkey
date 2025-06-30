@@ -102,7 +102,7 @@ export const Progress = () => {
             cy={containerSize / 2 + coef / 2}
             r={radius}
             fill="none"
-            stroke="#d2002a"
+            stroke="#c00"
             strokeWidth="5"
             strokeDasharray={2 * Math.PI * radius}
             strokeDashoffset={(1 - progress / 100) * 2 * Math.PI * radius}
@@ -141,14 +141,14 @@ export const Progress = () => {
                   cx={x}
                   cy={y}
                   r={index * step <= progress ? 20 : 10}
-                  fill="#d2002a"
+                  fill="#c00"
                 />
                 <text
                   x={x + offsetX}
                   y={y + offsetY}
                   textAnchor="middle"
                   fontSize={index < 12 ? (window.innerWidth <= 768 ? "1rem" : "1.5rem") : "3rem"}
-                  fill={index < 12 ? "#FFF" : "#d2002a"}
+                  fill={index < 12 ? "#FFF" : "#c00"}
                   transform={`rotate(${angle + rotate} ${x} ${y})`}
                 >
                   {index < 12

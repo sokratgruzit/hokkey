@@ -15,7 +15,7 @@
     z-index: 10000;
     top: calc(50% - 200px);
     left: calc(50% - 200px);
-    background: #d2002a;
+    background: #c00;
     border-radius: 8px;
     padding: 10px;
     display: flex;
