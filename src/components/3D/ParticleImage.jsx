@@ -6,8 +6,6 @@ import { shaderMaterial } from '@react-three/drei';
 
 import styles from './Coach.module.css';
 
-// === Фото из точек ===
-
 const vertexShader = `
   precision mediump float;
 
@@ -82,7 +80,7 @@ function ParticlePoints({ imageUrl, onComplete }) {
   }, []);
 
   useFrame((_, delta) => {
-    setProgress((prev) => Math.min(prev + delta * 0.5, 1));
+    setProgress((prev) => Math.min(prev + delta * 0.3, 1));
     if (shaderRef.current) {
       shaderRef.current.uProgress = progress;
       shaderRef.current.uTime += delta;

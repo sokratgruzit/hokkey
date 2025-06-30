@@ -61,22 +61,26 @@ export const CoachPage = () => {
                 t("careerMatuhov.5"),
             ],
             exp: [
-                t("careerMatuhov.0"),
-                t("careerMatuhov.1"),
-                t("careerMatuhov.2"),
-                t("careerMatuhov.3"),
-                t("careerMatuhov.4"),
+                t("expMatuhov.0"),
+                t("expMatuhov.1"),
+                t("expMatuhov.2"),
+                t("expMatuhov.3"),
+                t("expMatuhov.4"),
             ],
             education: [
-                t("careerMatuhov.0"),
-                t("careerMatuhov.1"),
-                t("careerMatuhov.2"),
-                t("careerMatuhov.3"),
+                t("educationMatuhov.0"),
+                t("educationMatuhov.1"),
+                t("educationMatuhov.2"),
+                t("educationMatuhov.3"),
             ]
         }
     };
 
     const coach = coaches[id];
+
+    let imgSrc = "/coaches/shakarov-details.jpg";
+
+    if (id === "matuhov") imgSrc = "/coaches/matuhov-details.png";
 
     return (
         <div className={styles.wrapper}>
@@ -119,7 +123,7 @@ export const CoachPage = () => {
                         </motion.span>
                     </div>
                     <div className={styles.headWrap}>
-                        <img src={`/coaches/${id}.png`} alt="coach" className={styles.coachImg} />
+                        <img src={imgSrc} alt="coach" className={styles.coachImg} />
                         {/* <ModelCanvas 
                             coachId={id} 
                             scale={0.09}
@@ -172,7 +176,7 @@ export const CoachPage = () => {
                             onClick={() => navigate(-1)}
                         />
                     </motion.span>
-                    <img src={`/coaches/${id}.png`} alt="coach" className={styles.coachImg} />
+                    <img src={imgSrc} alt="coach" className={styles.coachImg} />
                 </motion.div>
                 <div className={styles.column}>
                     {!isLoading && <BlockWithBorder width={"100%"}>
