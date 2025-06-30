@@ -70,7 +70,7 @@ export const Profits = () => {
                             >{item.title}</motion.h2>
                             <p
                                 style={{
-                                    color: hoveredItem === i ? "#d2002a" : "#768aa1"
+                                    color: hoveredItem === i ? "#c00" : "#768aa1"
                                 }}
                             >
                                 {item.text}
@@ -102,7 +102,7 @@ export const Profits = () => {
                             />
                             <span
                                 style={{
-                                    color: hoveredItem === i ? "#d2002a" : "#768aa1"
+                                    color: hoveredItem === i ? "#c00" : "#768aa1"
                                 }}
                             >{`(${i + 1})`}</span>
                             <motion.div 

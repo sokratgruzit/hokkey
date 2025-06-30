@@ -7,7 +7,7 @@ import { countries } from "./constants/countries";
 
 import { About } from "./components/About/About";
 import { Layout } from "./components/Layouts/Layout";
-import { Media } from "./components/Media/Media";
+// import { Media } from "./components/Media/Media";
 import { Program } from "./components/Program/Program";
 import { Home } from "./components/Home/Home";
 import { Policy } from "./components/Policy/Policy";
@@ -59,10 +59,10 @@ function App() {
           path="coaches/:id"
           element={<CoachPage />}
         />
-        <Route
+        {/* <Route
           path="media"
           element={<Media />}
-        />
+        /> */}
         <Route
           path="program"
           element={<Program />}

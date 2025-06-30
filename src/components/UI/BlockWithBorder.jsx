@@ -10,6 +10,7 @@ export const BlockWithBorder = ({
     width = "80%",
     bg = "#000",
     h = "auto",
+    align = "center",
     onBorderAnimationEnd = () => {}
 }) => {
     const [showContent, setShowContent] = useState(false);
@@ -71,7 +72,7 @@ export const BlockWithBorder = ({
         <div
             ref={wrapperRef}
             className={styles.blockWrapper}
-            style={{ height: h, width: safeWidth, background: bg }}
+            style={{ height: h, width: safeWidth, background: bg, justifyContent: align }}
         >
             <svg className={styles.borderSvg}>
                 {startAnimation && size.width > 2 && size.height > 2 && (

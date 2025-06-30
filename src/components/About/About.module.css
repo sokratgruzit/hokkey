@@ -1,0 +1,27 @@
+.container {
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 120px 20px 20px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.p {
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    border: 3px solid black;
+    z-index: 10;
+}
+
+.knightIcon {
+    width: 60%;
+    position: absolute;
+    right: -15%;
+    bottom: -10%;
+    opacity: .2;
+}

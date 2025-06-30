@@ -162,7 +162,7 @@ export const SignUp = () => {
           style={{ width: "100%" }}
         >
           <GlowButton
-            bg="#d2002a"
+            bg="#c00"
             glowColor="rgba(255, 255, 255, 0.26)"
             text={t("signUp.submit")}
             height="35px"

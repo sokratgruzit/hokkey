@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { useIsVisible } from "react-is-visible";
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
@@ -17,46 +16,37 @@ const slidesData = [
   "/gallery/10.webp"
 ];
 
-export const Gallery = () => {
+const Gallery = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [play, setPlay] = useState(false);
 
   const swiperRef = useRef();
   const isDragging = useRef(false);
   const { t } = useTranslation("common");
   const navigate = useNavigate();
-  const ref = useRef();
-  const isVisible = useIsVisible(ref);
   const dispatch = useDispatch();
 
   const title = t("promo.gallery");
   const btnText = t("promo.allPhoto");
 
   useEffect(() => {
-    if (isVisible && !play) {
-      setPlay(true);
-    }
-  }, [isVisible]);
-
-  useEffect(() => {
-    if (play && swiperRef.current?.swiper) {
+    if (swiperRef.current?.swiper) {
       // Принудительный пересчёт размеров
       setTimeout(() => {
         swiperRef.current.swiper.update();
       }, 100);
     }
-  }, [play]);
+  }, []);
 
   const handleSwitchSlide = () => {
     swiperRef?.current?.swiper?.slideNext();
   };
 
   return (
-    <div ref={ref} className={styles.galleryContainer}>
+    <div className={styles.galleryContainer}>
       <motion.div
         className={styles.titleWrap}
         initial={{ translateY: -50, opacity: 0 }}
-        animate={play ? { translateY: 0, opacity: 1 } : {}}
+        whileInView={{ translateY: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeInOut", delay: 0.1 }}
         style={{ willChange: "transform, opacity" }}
       >
@@ -83,8 +73,8 @@ export const Gallery = () => {
       <Swiper
         className={styles.swiper}
         style={{
-          opacity: play ? 1 : 0,
-          pointerEvents: play ? "auto" : "none",
+          opacity: 1,
+          pointerEvents: "auto",
           transition: "opacity 0.3s ease"
         }}
         spaceBetween={10}
@@ -127,3 +117,5 @@ export const Gallery = () => {
     </div>
   );
 };
+
+export default Gallery;

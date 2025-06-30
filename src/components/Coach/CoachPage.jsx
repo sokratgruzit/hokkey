@@ -7,7 +7,8 @@ import { useSelector } from "react-redux";
 import { Languages } from "../Languages/Languages";
 import { GlowButton } from "../UI/GlowButton";
 import { BlockWithBorder } from "../UI/BlockWithBorder";
-import { ModelCanvas } from "../3D/ModelCanvas";
+// import { ModelCanvas } from "../3D/ModelCanvas";
+import { ParticleImage } from "../3D/ParticleImage";
 import { RotatingObjectCanvas } from "../3D/RotatingObjectCanvas";
 
 import styles from "./CoachPage.module.css";
@@ -101,7 +102,7 @@ export const CoachPage = () => {
                         }}
                     >
                         <GlowButton
-                            bg="#d2002a"
+                            bg="#c00"
                             glowColor="rgba(255, 255, 255, 0.26)"
                             text={t("team.back")}
                             height="35px"
@@ -112,18 +113,34 @@ export const CoachPage = () => {
                     </motion.span>
                 </div>
                 <div className={styles.headWrap}>
-                    <ModelCanvas 
+                    <ParticleImage imageUrl={`/coaches/${id}.png`} />
+                    {/* <ModelCanvas 
                         coachId={id} 
                         scale={0.09}
                         position={[0, 0, 0]} 
-                    />
+                    /> */}
                 </div>
             </div>
+            <motion.div 
+                className={styles.headWrap2}
+                drag
+                dragConstraints={containerRef}
+                dragElastic={0.1}
+            >
+                <ParticleImage imageUrl={`/coaches/${id}.png`} />
+            </motion.div>
             <motion.div 
                 className={styles.generalData}
                 drag
                 dragConstraints={containerRef}
                 dragElastic={0.1}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                    duration: .7,
+                    ease: "easeInOut",
+                    delay: 7
+                }}
             >
                 <div className={styles.dataItem}>
                     <span>{t("team.lang")}</span> 
@@ -147,7 +164,7 @@ export const CoachPage = () => {
                     }}
                 >
                     <GlowButton
-                        bg="#d2002a"
+                        bg="#c00"
                         glowColor="rgba(255, 255, 255, 0.26)"
                         text={t("team.back")}
                         height="35px"
@@ -162,10 +179,17 @@ export const CoachPage = () => {
                     <h2 className={styles.title}>{t("team.career")}</h2>
                 </BlockWithBorder>}
                 <div className={styles.items}>
-                    {!isLoading && <div 
+                    {!isLoading && <motion.div 
                         className={styles.vertical} 
                         style={{
                             height: `${80 * coach.gameCareer.length + 82.5}px`
+                        }}
+                        initial={{ scaleY: 0 }}
+                        animate={{ scaleY: 1 }}
+                        transition={{
+                            delay: 1.5,
+                            duration: .7,
+                            ease: "easeInOut"
                         }}
                     >
                         {Array.from({ length: coach.gameCareer.length }, (_, i) => (
@@ -173,16 +197,16 @@ export const CoachPage = () => {
                                 key={`vertical-gameCareer-${i}`}
                                 className={styles.lineItem}
                                 style={{ bottom: `${i * 80}px` }}
-                                initial={{ height: 0 }}
-                                animate={{ height: 40 }}
+                                initial={{ height: 0, scaleX: 0 }}
+                                animate={{ height: 40, scaleX: 1 }}
                                 transition={{
-                                    delay: 0.3 * i,
-                                    duration: 0.4,
+                                    delay: .3 * (coach.gameCareer.length - i) + 2.2,
+                                    duration: .7,
                                     ease: "easeInOut"
                                 }}
                             />
                         ))}
-                    </div>}
+                    </motion.div>}
                     <div className={styles.cup}>
                         <RotatingObjectCanvas
                             path="/models/cup.obj"
@@ -193,7 +217,7 @@ export const CoachPage = () => {
                     </div>
                     {!isLoading && coach.gameCareer.map((c, i) => {
                         return (
-                            <BlockWithBorder key={`career-${i}`} delay={0.6 * i}>
+                            <BlockWithBorder delayBeforeStart={i * 0.5 + 3} key={`career-${i}`} delay={0.6 * i}>
                                 <p className={styles.item}>{c}</p>
                             </BlockWithBorder>
                         )
@@ -205,10 +229,17 @@ export const CoachPage = () => {
                     <h2 className={styles.title}>{t("team.education")}</h2>
                 </BlockWithBorder>}
                 <div className={styles.items}>
-                    {!isLoading && <div 
+                    {!isLoading && <motion.div 
                         className={styles.vertical} 
                         style={{
                             height: `${80 * coach.education.length + 82.5}px`
+                        }}
+                        initial={{ scaleY: 0 }}
+                        animate={{ scaleY: 1 }}
+                        transition={{
+                            delay: 2.5,
+                            duration: .7,
+                            ease: "easeInOut"
                         }}
                     >
                         {Array.from({ length: coach.education.length }, (_, i) => (
@@ -216,16 +247,16 @@ export const CoachPage = () => {
                                 key={`vertical-education-${i}`}
                                 className={styles.lineItem}
                                 style={{ bottom: `${i * 80}px` }}
-                                initial={{ height: 0 }}
-                                animate={{ height: 40 }}
+                                initial={{ height: 0, scaleX: 0 }}
+                                animate={{ height: 40, scaleX: 1 }}
                                 transition={{
-                                    delay: 0.3 * i,
-                                    duration: 0.4,
+                                    delay: .3 * (coach.education.length - i) + 3.2,
+                                    duration: .7,
                                     ease: "easeInOut"
                                 }}
                             />
                         ))}
-                    </div>}
+                    </motion.div>}
                     <div className={styles.brain}>
                         <RotatingObjectCanvas
                             path="/models/brain.obj"
@@ -237,7 +268,7 @@ export const CoachPage = () => {
                     </div>
                     {!isLoading && coach.education.map((c, i) => {
                         return (
-                            <BlockWithBorder key={`education-${i}`} delay={0.6 * i}>
+                            <BlockWithBorder delayBeforeStart={i * 0.5 + 3} key={`education-${i}`} delay={0.6 * i}>
                                 <p className={styles.item}>{c}</p>
                             </BlockWithBorder>
                         )
@@ -249,10 +280,17 @@ export const CoachPage = () => {
                     <h2 className={styles.title}>{t("team.exp")}</h2>
                 </BlockWithBorder>}    
                 <div className={styles.items}>
-                    {!isLoading && <div 
+                    {!isLoading && <motion.div 
                         className={styles.vertical} 
                         style={{
                             height: `${80 * coach.exp.length + 82.5}px`
+                        }}
+                        initial={{ scaleY: 0 }}
+                        animate={{ scaleY: 1 }}
+                        transition={{
+                            delay: 3.5,
+                            duration: .7,
+                            ease: "easeInOut"
                         }}
                     >
                         {Array.from({ length: coach.exp.length }, (_, i) => (
@@ -260,16 +298,16 @@ export const CoachPage = () => {
                                 key={`vertical-exp-${i}`}
                                 className={styles.lineItem}
                                 style={{ bottom: `${i * 80}px` }}
-                                initial={{ height: 0 }}
-                                animate={{ height: 40 }}
+                                initial={{ height: 0, scaleX: 0 }}
+                                animate={{ height: 40, scaleX: 1 }}
                                 transition={{
-                                    delay: 0.3 * i,
-                                    duration: 0.4,
+                                    delay: .3 * (coach.exp.length - i) + 4.2,
+                                    duration: .7,
                                     ease: "easeInOut"
                                 }}
                             />
                         ))}
-                    </div>}
+                    </motion.div>}
                     <div className={styles.stick}>
                         <RotatingObjectCanvas
                             path="/models/stick.obj"
@@ -281,7 +319,7 @@ export const CoachPage = () => {
                     </div>
                     {!isLoading && coach.exp.map((c, i) => {
                         return (
-                            <BlockWithBorder key={`exp-${i}`} delay={0.6 * i}>
+                            <BlockWithBorder delayBeforeStart={i * 0.5 + 3} key={`exp-${i}`} delay={0.6 * i}>
                                 <p className={styles.item}>{c}</p>
                             </BlockWithBorder>
                         )

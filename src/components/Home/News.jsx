@@ -1,20 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { useIsVisible } from "react-is-visible";
-import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import styles from "./Home.module.css";
 
-export const News = () => {
+const News = () => {
     const { t } = useTranslation("common");
-    const ref = useRef();
-    const isVisible = useIsVisible(ref);
-
-    const [play, setPlay] = useState(false);
-
-    useEffect(() => {
-        if (isVisible && !play) setPlay(true);
-    }, [isVisible]);
 
     const newsData = [
         {
@@ -38,23 +28,23 @@ export const News = () => {
     ];
 
     return (
-        <div ref={ref} className={styles.newsContainer}>
-            {play && <motion.div 
+        <div className={styles.newsContainer}>
+            <motion.div 
                 className={styles.titleWrap}
                 initial={{ translateY: -50, opacity: 0 }}
-                animate={{ translateY: 0, opacity: 1 }}
+                whileInView={{ translateY: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeInOut", delay: 0.1 }}
             >
                 <h1 className="h1 text-shadow" style={{ color: "white", textAlign: "start" }}>{t("promo.news")}</h1>
-            </motion.div>}
-            {play && <div className={styles.newsWrap}>
+            </motion.div>
+            <div className={styles.newsWrap}>
                 {newsData.map((item, i) => {
                     return (
                         <motion.div 
                             key={i} 
                             className={styles.newsItem}
                             initial={{ translateY: 50, opacity: 0 }}
-                            animate={{ translateY: 0, opacity: 1 }}
+                            whileInView={{ translateY: 0, opacity: 1 }}
                             transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 * (i + 1)}}
                         >
                             <img src={item.src} alt="news image" />
@@ -66,7 +56,9 @@ export const News = () => {
                         </motion.div>
                     )
                 })}
-            </div>}
+            </div>
         </div>
     )
 };
+
+export default News;

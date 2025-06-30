@@ -1,20 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useIsVisible } from "react-is-visible";
 
 import styles from "./Home.module.css";
 
-export const Trainings = () => {
+const Trainings = () => {
     const { t } = useTranslation("common");
-    const ref = useRef(null);
-    const isVisible = useIsVisible(ref);
-
-    const [play, setPlay] = useState(false);
-
-    useEffect(() => {
-        if (isVisible && !play) setPlay(true);
-    }, [isVisible]);
 
     const title = t("trainings.title");
 
@@ -26,10 +16,10 @@ export const Trainings = () => {
     ];
 
     return (
-        <div ref={ref} className={styles.trainingsContainer}>
-            {play && <motion.div
+        <div className={styles.trainingsContainer}>
+            <motion.div
                 initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                whileInView={{ y: 0, opacity: 1 }}
                 transition={{
                     duration: 1,
                     ease: "easeInOut",
@@ -41,15 +31,15 @@ export const Trainings = () => {
                     {title}
                 </h2>
                 <img src="/appIcons/red-knights.svg" alt="Knight" />
-            </motion.div>}
-            {play && <div className={styles.items}>
+            </motion.div>
+            <div className={styles.items}>
                 {trainingsData.map((item, i) => {
                     return (
                         <div key={`trainins-${i}`} className={styles.item}>
                             <motion.div
                                 key={`animated-trainins-${i}`}
                                 initial={{ y: 100, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
+                                whileInView={{ y: 0, opacity: 1 }}
                                 transition={{
                                     duration: 1,
                                     ease: "easeInOut",
@@ -72,7 +62,9 @@ export const Trainings = () => {
                         </div>
                     );
                 })}
-            </div>}
+            </div>
         </div>
     );
 };
+
+export default Trainings;

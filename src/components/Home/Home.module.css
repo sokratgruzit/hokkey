@@ -69,6 +69,7 @@ h2 {
     position: relative;
     height: auto;
     flex-direction: column;
+    max-width: 1440px;
 }
 
 .sectionsWrap {
@@ -87,12 +88,18 @@ h2 {
     height: 100%;
 }
 
+.shadow {
+    -webkit-box-shadow: 10px 10px 35px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 35px 4px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 35px 4px rgba(0,0,0,0.75);
+}
+
 .sectionContent {
     height: 400px;
     justify-content: space-between;
     overflow-y: auto;
     scrollbar-width: thin; /* Firefox */
-    scrollbar-color: #d2002a black; /* Firefox */
+    scrollbar-color: #000 transparent; /* Firefox */
 }
 
 
@@ -105,10 +112,11 @@ h2 {
 .sectionContent::-webkit-scrollbar-track {
   background: black;
   border-radius: 6px;
+  border: none;
 }
 
 .sectionContent::-webkit-scrollbar-thumb {
-  background-color: #d2002a;
+  background-color: #c00;
   border-radius: 6px;
 }
 
@@ -154,7 +162,7 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    border: 2px solid #d2002a;
+    border: 2px solid #c00;
     padding: 10px;
     border-radius: 8px;
 }
@@ -191,7 +199,7 @@ h2 {
 .statsItem {
     padding: 10px;
     border-radius: 8px;
-    background: #d2002a;
+    background: #c00;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -217,6 +225,7 @@ h2 {
     flex-direction: column;
     padding: 20px 0;
     position: relative;
+    max-width: 1440px;
 }
 
 .galleryContainer h1 {
@@ -254,7 +263,7 @@ h2 {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: #d2002a;
+    background: #c00;
     cursor: pointer;
     bottom: 40px;
     right: 20px;
@@ -286,6 +295,7 @@ h2 {
     gap: 20px;
     position: relative;
     flex-direction: column;
+    max-width: 1440px;
 }
 
 .newsWrap {
@@ -304,7 +314,6 @@ h2 {
     -webkit-box-shadow: 10px 10px 35px 4px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 35px 4px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 35px 4px rgba(0,0,0,0.75);
-    border-radius: 10px;
     overflow: hidden;
 }
 
@@ -323,7 +332,7 @@ h2 {
 
 .textBlock h2 {
     font-size: 20px;
-    color: #d2002a;
+    color: #c00;
 }
 
 .sloganContainer {
@@ -334,7 +343,7 @@ h2 {
     justify-content: center;
     align-items: center;
     position: relative;
-    background: #d2002a;
+    background: #c00;
     flex-direction: column;
     overflow: hidden;
 }
@@ -443,7 +452,7 @@ h2 {
 }
 
 .hiddenTitle {
-    color: #d2002a !important;
+    color: #c00 !important;
     position: absolute;
     left: 0;
     top: -30px;
@@ -457,7 +466,7 @@ h2 {
     position: absolute;
     width: 100%;
     height: 2px;
-    background: #d2002a;
+    background: #c00;
     left: 0;
     bottom: 0;
     transform: translateX(-150%);
@@ -479,7 +488,7 @@ h2 {
     transform: translateY(100%);
     z-index: 10;
     opacity: 0;
-    border: 3px solid #d2002a;
+    border: 3px solid #c00;
 }
 
 .layout {
@@ -494,6 +503,7 @@ h2 {
 
 .trainingsContainer {
     width: 100%;
+    max-width: 1440px;
     padding: 20px;
     height: auto;
     position: relative;
@@ -658,6 +668,7 @@ h2 {
 
 .teamContainer {
     width: 100%;
+    max-width: 1440px;
     height: auto;
     gap: 20px;
     display: flex;
@@ -680,21 +691,19 @@ h2 {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .teamItem {
     position: relative;
     width: calc(100% / 3 - 20px);
-    height: 400px;
-    max-width: 400px;
     cursor: pointer;
-    border: 3px solid black;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     -webkit-box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.75);
-    padding: 10px;
     background: rgba(0, 0, 0, 0.3);
 }
 
@@ -702,74 +711,29 @@ h2 {
     position: relative;
     width: calc(100% / 3 - 20px);
     height: 400px;
-    max-width: 400px;
     cursor: pointer;
-    border: 3px solid black;
-    border-right: none;
-    overflow: hidden;
-    -webkit-box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.75);
-    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .teamItemContent {
     position: relative;
     width: 100%;
     height: 100%;
-    border: 3px solid black;
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-
-.teamItemContent2 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: space-between;
-    overflow-y: auto;
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: #d2002a black; /* Firefox */
-    padding: 10px;
-}
-
-/* Chrome, Edge, Safari */
-.teamItemContent2::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-.teamItemContent2::-webkit-scrollbar-track {
-  background: black;
-  border-radius: 6px;
-}
-
-.teamItemContent2::-webkit-scrollbar-thumb {
-  background-color: #d2002a;
-  border-radius: 6px;
-}
-
-.teamItemContent2::-webkit-scrollbar-button {
-  display: none; /* Убирает стрелки */
-}
-
-.teamItemContent2 p {
-    color: white;
-    word-break: break-all;
 }
 
 .teamItemImg {
     width: 100%;
+    object-fit: contain;
     height: calc(100% - 75px);
 }
 
 .teamItemContent h2 {
-    color: #d2002a;
+    color: #c00;
     font-size: 1.5rem;
     width: 50%;
     position: relative;
@@ -777,21 +741,19 @@ h2 {
 
 .knightIcon {
     position: relative;
-    width: 70px;
-    height: 70px;
+    width: 90%;
 }
 
 .teamItemInfo {
-    position: absolute;
+    position: relative;
     width: 100%;
-    bottom: 0;
     background: none;
     height: 75px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
-    border-top: 3px solid black;
+    border: 3px solid black;
+    padding: 10px;
 }
 
 @keyframes counter-rotate {

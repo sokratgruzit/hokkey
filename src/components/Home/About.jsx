@@ -1,59 +1,49 @@
 import { useTranslation } from "react-i18next";
-import { useIsVisible } from "react-is-visible";
-import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import styles from "./Home.module.css";
 
-export const About = () => {
+const About = () => {
     const { t } = useTranslation("common");
-    const ref = useRef();
-    const isVisible = useIsVisible(ref);
-
-    const [play, setPlay] = useState(false);
 
     const title = t("promo.aboutUs");
     const text1 = t("promo.aboutDescr");
     const text2 = t("promo.listItem1");
     const text3 = t("promo.listItem2");
 
-    useEffect(() => {
-        if (isVisible && !play) setPlay(true);
-    }, [isVisible]);
-
     return (
-        <div ref={ref} className={styles.aboutContainer}>
-            {play && <motion.h2
+        <div className={styles.aboutContainer}>
+            <motion.h2
                 initial={{ translateY: -50, opacity: 0 }}
-                animate={{ translateY: 0, opacity: 1 }}
+                whileInView={{ translateY: 0, opacity: 1 }}
                 transition={{
                     duration: 1,
                     ease: "easeInOut"
                 }}
                 className="h1 text-shadow"
                 style={{ color: "white", width: "100%", textAlign: "start", willChange: "transform, opacity" }}
-            >{title}</motion.h2>}
+            >{title}</motion.h2>
             <div className={styles.sectionsWrap}>
-                <div className={styles.section}>
-                    {play && <motion.div 
-                        className={styles.player}
-                        initial={{ translateY: -50, opacity: 0 }}
-                        animate={{ translateY: 0, opacity: 1 }}
-                        style={{ willChange: "transform, opacity" }}
-                        transition={{
-                            duration: 1,
-                            ease: "easeInOut",
-                            delay: .3
-                        }}
-                    >
+                <motion.div 
+                    className={`${styles.section} ${styles.shadow}`}
+                    initial={{ translateY: -50, opacity: 0 }}
+                    whileInView={{ translateY: 0, opacity: 1 }}
+                    style={{ willChange: "transform, opacity" }}
+                    transition={{
+                        duration: 1,
+                        ease: "easeInOut",
+                        delay: .3
+                    }}
+                >
+                    <div className={styles.player}>
                         <div className={styles.aboutImage} />
-                    </motion.div>}
-                </div>
+                    </div>
+                </motion.div>
                 <div className={`${styles.section} ${styles.sectionContent}`}>
-                    {play && <motion.p 
+                    <motion.p 
                         className={styles.sectionTitle}
                         initial={{ translateY: -50, opacity: 0 }}
-                        animate={{ translateY: 0, opacity: 1 }}
+                        whileInView={{ translateY: 0, opacity: 1 }}
                         style={{ willChange: "transform, opacity" }}
                         transition={{
                             duration: 1,
@@ -64,11 +54,11 @@ export const About = () => {
                         <span className={styles.titleContent}>
                             {text1}
                         </span>
-                    </motion.p>}
-                    {play && <motion.p 
+                    </motion.p>
+                    <motion.p 
                         className={styles.sectionTitle}
                         initial={{ translateY: -50, opacity: 0 }}
-                        animate={{ translateY: 0, opacity: 1 }}
+                        whileInView={{ translateY: 0, opacity: 1 }}
                         style={{ willChange: "transform, opacity" }}
                         transition={{
                             duration: 1,
@@ -79,11 +69,11 @@ export const About = () => {
                         <span className={styles.titleContent}>
                             {text2}
                         </span>
-                    </motion.p>}
-                    {play && <motion.p 
+                    </motion.p>
+                    <motion.p 
                         className={styles.sectionTitle}
                         initial={{ translateY: -50, opacity: 0 }}
-                        animate={{ translateY: 0, opacity: 1 }}
+                        whileInView={{ translateY: 0, opacity: 1 }}
                         style={{ willChange: "transform, opacity" }}
                         transition={{
                             duration: 1,
@@ -94,7 +84,7 @@ export const About = () => {
                         <span className={styles.titleContent}>
                             {text3}
                         </span>
-                    </motion.p>}
+                    </motion.p>
                     {/* {play && <motion.div 
                         className={styles.list}
                         initial={{ translateY: -50, opacity: 0 }}
@@ -137,3 +127,5 @@ export const About = () => {
         </div>
     )
 };
+
+export default About;
