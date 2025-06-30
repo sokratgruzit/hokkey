@@ -78,6 +78,10 @@ export const CoachPage = () => {
 
     const coach = coaches[id];
 
+    let imgSrc = "/coaches/shakarov-details.jpg";
+
+    if (id === "matuhov") imgSrc = "/coaches/matuhov-details.png";
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.headWrap2}>
@@ -119,7 +123,7 @@ export const CoachPage = () => {
                         </motion.span>
                     </div>
                     <div className={styles.headWrap}>
-                        <img src={`/coaches/${id}.png`} alt="coach" className={styles.coachImg} />
+                        <img src={imgSrc} alt="coach" className={styles.coachImg} />
                         {/* <ModelCanvas 
                             coachId={id} 
                             scale={0.09}
@@ -172,7 +176,7 @@ export const CoachPage = () => {
                             onClick={() => navigate(-1)}
                         />
                     </motion.span>
-                    <img src={`/coaches/${id}.png`} alt="coach" className={styles.coachImg} />
+                    <img src={imgSrc} alt="coach" className={styles.coachImg} />
                 </motion.div>
                 <div className={styles.column}>
                     {!isLoading && <BlockWithBorder width={"100%"}>
