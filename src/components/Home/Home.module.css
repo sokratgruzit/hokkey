@@ -102,6 +102,15 @@ h2 {
     scrollbar-color: #000 transparent; /* Firefox */
 }
 
+.badge {
+    position: absolute;
+    font-weight: 900;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 15px;
+    top: 10px;
+    left: 10px;
+}
 
 /* Chrome, Edge, Safari */
 .sectionContent::-webkit-scrollbar {

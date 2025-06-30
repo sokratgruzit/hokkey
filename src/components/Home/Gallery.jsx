@@ -51,7 +51,7 @@ const Gallery = () => {
         style={{ willChange: "transform, opacity" }}
       >
         <h1 className="h1 text-shadow-white" style={{ textAlign: "start" }}>{title}</h1>
-        <div style={{ marginRight: 20, marginLeft: 20 }}>
+        {/* <div style={{ marginRight: 20, marginLeft: 20 }}>
           <GlowButton
             bg="#000"
             glowColor="rgba(255, 255, 255, 0.26)"
@@ -67,7 +67,7 @@ const Gallery = () => {
               });
             }}
           />
-        </div>
+        </div> */}
       </motion.div>
 
       <Swiper
