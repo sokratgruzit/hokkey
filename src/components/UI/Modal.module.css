@@ -8,12 +8,17 @@
     background: rgba(0,0,0,.75);
 }
 
+.input:focus,
+.textarea:focus {
+    outline: 2px solid black;
+}
+
 .modal {
     position: fixed;
     width: 400px;
-    height: 400px;
+    min-height: 400px;
     z-index: 10000;
-    top: calc(50% - 200px);
+    height: auto;
     left: calc(50% - 200px);
     background: #c00;
     border-radius: 8px;
@@ -24,56 +29,68 @@
     cursor: pointer;
 }
 
-.modalTitleWrap {
+.titleWrap {
     display: flex;
     justify-content: space-between;
-}
-
-.modalTitleWrap h2 {
-    width: 50%;
-}
-
-.modalTitleWrap p {
-    font-size: 4.5rem;
-    color: #FFF;
-    line-height: 70px;
-}
-
-.modalBirth,
-.dataP p,
-.modalPosition p {
-    font-size: .75rem;
-    color: #FFF;
-}
-
-.dataP p {
-    margin-bottom: 5px;
-}
-
-.modalSeparator {
-    position: relative;
-    width: 100%;
-    border-bottom: 2.5px dotted #FFF;
-}
-
-.modalData {
-    width: 100%;
-    display: flex;
-    gap: 20px;
-}
-
-.modalPosition {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    display: flex;
-    gap: 5px;
+    align-items: center;
 }
 
 .modalKnight {
-    position: absolute;
+    position: relative;
     width: 80px;
     height: 80px;
-    right: 10px;
-    bottom: 10px;
+}
+
+.title {
+    font-size: 2rem;
+    color: black;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 1px solid black;
+    background: transparent;
+    color: black;
+    outline: none;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    color: black;
+    width: 100%;
+}
+
+.textarea {
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 380px;
+    resize: vertical;
+    position: relative;
+}
+
+.error {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+}
+
+.success {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width: 440px) {
+    .modal {
+        width: calc(100% - 40px);
+        left: 20px;
+    }
 }

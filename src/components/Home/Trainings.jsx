@@ -1,12 +1,17 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
+import { GlowButton } from "../UI/GlowButton";
 
 import styles from "./Home.module.css";
 
 const Trainings = () => {
     const { t } = useTranslation("common");
+    const navigate = useNavigate();
 
     const title = t("trainings.title");
+    const joinUs = t("promo.joinUs");
 
     const trainingsData = [
         { title: t("trainings.title1"), text: t("trainings.text1") },
@@ -31,6 +36,15 @@ const Trainings = () => {
                     {title}
                 </h2>
                 <img src="/appIcons/red-knights.svg" alt="Knight" />
+                <GlowButton
+                    bg="#c00"
+                    glowColor="rgba(255, 255, 255, 0.26)"
+                    text={joinUs}
+                    height="35px"
+                    fontSize="18px"
+                    shadowed={true}
+                    onClick={() => navigate("signup")}
+                />
             </motion.div>
             <div className={styles.items}>
                 {trainingsData.map((item, i) => {

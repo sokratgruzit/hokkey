@@ -3,13 +3,15 @@ import { useSelector } from "react-redux";
 
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { Loader } from "../UI/Loader";
+import { Modal } from "../UI/Modal";
 
 import styles from "./Layout.module.css";
-import { Loader } from "../UI/Loader";
 
 export const Layout = () => {
     const location = useLocation();
     const isLoading = useSelector((state) => state.settings.isLoading);
+    const modal = useSelector((state) => state.settings.modal);
 
     const hiddenPaths = ["/coaches/shakarov", "/coaches/matuhov"];
 
@@ -23,6 +25,7 @@ export const Layout = () => {
                 <Outlet />
             </main>
             {!shouldHideHeaderFooter && <Footer />}
+            {modal && <Modal />}
         </div>
     );
 };
