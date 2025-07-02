@@ -21,29 +21,28 @@ const Promo = () => {
     return (
         <div className={styles.promoContainer}>
             <div className={styles.layer} />
-            <motion.h1
-                initial={{ translateY: -50, opacity: 0 }}
-                whileInView={{ translateY: 0, opacity: 1 }}
-                transition={{
-                    duration: 1,
-                    ease: "easeInOut"
-                }}
-                style={{ textAlign: "center", willChange: "transform, opacity" }}
-                className="h1 text-shadow"
-            >{title}</motion.h1>
-            <motion.h2
-                initial={{ translateY: -50, opacity: 0 }}
-                whileInView={{ translateY: 0, opacity: 1 }}
-                transition={{
-                    duration: 1,
-                    ease: "easeInOut",
-                    delay: .3
-                }}
-                style={{ width: "70%", textAlign: "center", willChange: "transform, opacity" }}
-                className="text-shadow"
-            >{subTitle}</motion.h2>
+            <div className={styles.promoTextWrap}>
+                <motion.h1
+                    initial={{ translateY: -50, opacity: 0 }}
+                    whileInView={{ translateY: 0, opacity: 1 }}
+                    transition={{
+                        duration: 1,
+                        ease: "easeInOut"
+                    }}
+                    className={`${styles.animatedText} h1 text-shadow`}
+                >{title}</motion.h1>
+                <motion.h2
+                    initial={{ translateY: -50, opacity: 0 }}
+                    whileInView={{ translateY: 0, opacity: 1 }}
+                    transition={{
+                        duration: 1,
+                        ease: "easeInOut",
+                        delay: .3
+                    }}
+                    className={`${styles.animatedText} text-shadow`}
+                >{subTitle}</motion.h2>
+            </div>
             <motion.span
-                style={{ willChange: "transform, opacity" }}
                 initial={{ translateY: -50, opacity: 0 }}
                 whileInView={{ translateY: 0, opacity: 1 }}
                 transition={{
@@ -51,6 +50,7 @@ const Promo = () => {
                     ease: "easeInOut",
                     delay: .5
                 }}
+                className={styles.animatedBtn}
             >
                 <GlowButton
                     bg="#c00"

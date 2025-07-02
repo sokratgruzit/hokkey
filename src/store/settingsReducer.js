@@ -8,7 +8,8 @@ const INIT_STATE = {
   },
   languageModal: false,
   activeTab: "",
-  isLoading: false
+  isLoading: false,
+  modal: false
 };
 
 const settingsReducer = (state = INIT_STATE, action) => {
@@ -23,6 +24,12 @@ const settingsReducer = (state = INIT_STATE, action) => {
       return {
         ...state,
         languageModal: action.payload,
+      };
+
+    case "SET_MODAL":
+      return {
+        ...state,
+        modal: action.payload,
       };
 
     case "SET_LOADING":

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { useFrame, useLoader, extend, Canvas } from '@react-three/fiber';
+import { useFrame, useLoader, extend, Canvas, useThree } from '@react-three/fiber';
 import { useMemo, useRef, useState, useEffect, Suspense } from 'react';
 import { TextureLoader } from 'three';
 import { shaderMaterial } from '@react-three/drei';
@@ -58,6 +58,7 @@ function ParticlePoints({ imageUrl, onComplete }) {
   const shaderRef = useRef();
   const [progress, setProgress] = useState(0);
   const completeRef = useRef(false);
+  const { invalidate } = useThree();
 
   const geometry = useMemo(() => {
     const size = 280;
@@ -80,11 +81,17 @@ function ParticlePoints({ imageUrl, onComplete }) {
   }, []);
 
   useFrame((_, delta) => {
-    setProgress((prev) => Math.min(prev + delta * 0.3, 1));
-    if (shaderRef.current) {
-      shaderRef.current.uProgress = progress;
-      shaderRef.current.uTime += delta;
-    }
+    setProgress((prev) => {
+      const next = Math.min(prev + delta * 0.3, 1);
+      if (shaderRef.current) {
+        shaderRef.current.uProgress = next;
+        shaderRef.current.uTime += delta;
+      }
+      if (next < 1) {
+        invalidate();
+      }
+      return next;
+    });
   });
 
   useEffect(() => {
@@ -111,7 +118,7 @@ function ParticlePoints({ imageUrl, onComplete }) {
 
 export function ParticleImage({ imageUrl, onComplete }) {
   return (
-    <Canvas camera={{ position: [0, 0, 1.5], near: 0.1, far: 1000 }} className={styles.canvas}>
+    <Canvas frameloop="demand" camera={{ position: [0, 0, 1.5], near: 0.1, far: 1000 }} className={styles.canvas}>
       <ambientLight intensity={1} />
       <Suspense fallback={null}>
         <ParticlePoints onComplete={onComplete} imageUrl={imageUrl} />

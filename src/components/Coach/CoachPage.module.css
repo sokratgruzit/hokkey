@@ -65,7 +65,7 @@
   will-change: opactiy;
   justify-content: space-between;
   width: 650px;
-  height: 300px;
+  height: 270px;
   z-index: 10000;
 }
 
@@ -198,7 +198,7 @@
   }
 
   .coachImg {
-    right: calc(50% - 150px);
+    right: calc(50% - 165px);
     top: calc(50% - 165px);
     height: 330px;
     width: 330px;

@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useDispatch } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { GlowButton } from "../UI/GlowButton";
@@ -23,14 +22,12 @@ const Gallery = () => {
   const isDragging = useRef(false);
   const { t } = useTranslation("common");
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const title = t("promo.gallery");
-  const btnText = t("promo.allPhoto");
+  const joinUs = t("promo.joinUs");
 
   useEffect(() => {
     if (swiperRef.current?.swiper) {
-      // Принудительный пересчёт размеров
       setTimeout(() => {
         swiperRef.current.swiper.update();
       }, 100);
@@ -51,23 +48,17 @@ const Gallery = () => {
         style={{ willChange: "transform, opacity" }}
       >
         <h1 className="h1 text-shadow-white" style={{ textAlign: "start" }}>{title}</h1>
-        {/* <div style={{ marginRight: 20, marginLeft: 20 }}>
+        <div style={{ marginRight: 20, marginLeft: 20 }}>
           <GlowButton
             bg="#000"
             glowColor="rgba(255, 255, 255, 0.26)"
-            text={btnText}
+            text={joinUs}
             height="35px"
             fontSize="18px"
             shadowed={true}
-            onClick={() => {
-              navigate("/media");
-              dispatch({
-                type: "SET_ACTIVE_TAB",
-                payload: "media"
-              });
-            }}
+            onClick={() => navigate("signup")}
           />
-        </div> */}
+        </div>
       </motion.div>
 
       <Swiper

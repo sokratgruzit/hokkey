@@ -31,19 +31,6 @@ export const SignUp = () => {
     }
 
     try {
-      // 1. Отправка автоответа юзеру
-      await emailjs.send(
-        "service_q71l61x",
-        "template_7oudsly",
-        {
-          name,
-          email,
-          phone,
-          birthYear,
-        },
-        "ceI7rbNzPHVxH5AqY"
-      );
-
       // 2. Отправка уведомления админу
       await emailjs.send(
         "service_q71l61x",
